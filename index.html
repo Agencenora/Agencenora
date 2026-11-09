@@ -271,12 +271,32 @@ footer .ville{display:block;margin-top:6px;font-size:14px;color:#C9CEDA}
 .btn.bulle:hover::before,.btn.bulle.on::before{opacity:1;transform:translateX(-50%) rotate(45deg) scale(1)}
 .offre.vedette .btn.bulle::after,.offre.vedette .btn.bulle::before{background:var(--orange)}
 @media (prefers-reduced-motion: reduce){.btn.bulle::after,.btn.bulle::before{transition:opacity .2s}}
+
+/* ===== Frises animées : la ligne se remplit au défilement, chaque étape s'allume ===== */
+.frise .pour{min-height:3.4em}
+.jal{min-height:104px;padding-bottom:0}
+.jal:not(:last-child)::after{top:52px;bottom:4px;background:linear-gradient(var(--orange) var(--f,0%),var(--ligne) var(--f,0%))}
+.jal .j{transition:background .35s ease,color .35s ease,border-color .35s ease,transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s}
+.jal>div{opacity:.38;transform:translateX(-6px);transition:opacity .45s ease,transform .45s ease}
+.jal.on>div{opacity:1;transform:none}
+.jal.on .j{background:var(--bleu);border-color:var(--bleu);color:#fff;transform:scale(1.06);box-shadow:0 6px 16px rgba(20,35,60,.18)}
+.jal.f.on .j{background:var(--orange);border-color:var(--orange);box-shadow:0 0 0 6px rgba(201,90,38,.15),0 6px 16px rgba(201,90,38,.35)}
+.jal.f .j{background:var(--creme);border-color:var(--orange);color:var(--orange)}
+@media (prefers-reduced-motion: reduce){.jal>div{opacity:1;transform:none}.jal .j{transition:none}}
+/* ===== Flèches des boutons : elle file vers la droite et revient, au lieu de pivoter ===== */
+.btn .fl{overflow:hidden}
+.btn .fl i{font-style:normal;display:inline-block}
+.btn:hover .fl{transform:none}
+.btn:hover .fl i{animation:passe .5s ease}
+@keyframes passe{0%{transform:translateX(0);opacity:1}45%{transform:translateX(170%);opacity:0}46%{transform:translateX(-170%);opacity:0}100%{transform:translateX(0);opacity:1}}
+.btn.o:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion: reduce){.btn:hover .fl i{animation:none}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
   <a href="#top" aria-label="Accueil"><svg class="logo" role="img" aria-label="Nora" xmlns="http://www.w3.org/2000/svg" viewBox="50 96 516 120"><path fill="#14233C" d="M54.2 210.0V103.8H84.6L85.6 125.39999999999999L79.2 127.8Q81.4 120.6 87.10000000000001 114.69999999999999Q92.80000000000001 108.8 100.80000000000001 105.19999999999999Q108.8 101.6 117.60000000000001 101.6Q129.60000000000002 101.6 137.8 106.5Q146.0 111.39999999999999 150.2 121.1Q154.4 130.8 154.4 144.8V210.0H122.2V147.4Q122.2 141.0 120.4 136.8Q118.60000000000001 132.6 114.9 130.5Q111.2 128.39999999999998 105.8 128.6Q101.6 128.6 98.0 129.89999999999998Q94.4 131.2 91.80000000000001 133.7Q89.2 136.2 87.7 139.39999999999998Q86.2 142.6 86.2 146.4V210.0H70.4Q64.8 210.0 60.8 210.0Q56.8 210.0 54.2 210.0Z"/><path fill="#14233C" d="M231.2 212.0Q214.6 212.0 201.7 204.8Q188.8 197.6 181.3 185.2Q173.8 172.8 173.8 156.8Q173.8 140.8 181.3 128.4Q188.8 116.0 201.7 108.8Q214.6 101.6 231.2 101.6Q247.8 101.6 260.70000000000005 108.8Q273.6 116.0 281.0 128.4Q288.4 140.8 288.4 156.8Q288.4 172.8 281.0 185.2Q273.6 197.6 260.70000000000005 204.8Q247.8 212.0 231.2 212.0ZM231.2 184.4Q238.4 184.4 244.0 180.8Q249.60000000000002 177.2 252.8 171.0Q256.0 164.8 255.8 156.8Q256.0 148.8 252.8 142.5Q249.60000000000002 136.2 244.0 132.6Q238.4 129.0 231.2 129.0Q224.0 129.0 218.3 132.6Q212.6 136.2 209.39999999999998 142.5Q206.2 148.8 206.4 156.8Q206.2 164.8 209.39999999999998 171.0Q212.6 177.2 218.3 180.8Q224.0 184.4 231.2 184.4Z"/><path fill="#14233C" d="M309.403125 210.0V103.8H339.803125L341.203125 138.39999999999998L335.203125 131.8Q337.603125 123.19999999999999 343.103125 116.39999999999999Q348.603125 109.6 356.00312499999995 105.6Q363.403125 101.6 371.803125 101.6Q375.403125 101.6 378.50312499999995 102.19999999999999Q381.603125 102.8 384.203125 103.6L375.403125 139.0Q373.203125 137.6 369.503125 136.7Q365.803125 135.8 361.803125 135.8Q357.403125 135.8 353.603125 137.3Q349.803125 138.8 347.203125 141.6Q344.603125 144.39999999999998 343.103125 148.2Q341.603125 152.0 341.603125 156.8V210.0Z"/><path fill="#14233C" d="M439.603125 211.8Q426.203125 211.8 415.703125 204.7Q405.203125 197.6 399.003125 185.1Q392.803125 172.6 392.803125 156.8Q392.803125 140.6 399.003125 128.2Q405.203125 115.8 416.003125 108.69999999999999Q426.803125 101.6 440.603125 101.6Q448.203125 101.6 454.503125 103.8Q460.803125 106.0 465.603125 109.9Q470.403125 113.8 473.803125 118.9Q477.203125 124.0 478.803125 129.8L472.203125 129.0V103.8H504.003125V210.0H471.603125V184.4L478.803125 184.2Q477.203125 189.8 473.603125 194.8Q470.003125 199.8 464.803125 203.60000000000002Q459.603125 207.4 453.203125 209.60000000000002Q446.803125 211.8 439.603125 211.8ZM448.403125 184.8Q455.803125 184.8 461.203125 181.4Q466.603125 178.0 469.603125 171.7Q472.603125 165.4 472.603125 156.8Q472.603125 148.2 469.603125 141.89999999999998Q466.603125 135.6 461.203125 132.1Q455.803125 128.6 448.403125 128.6Q441.203125 128.6 435.903125 132.1Q430.603125 135.6 427.603125 141.89999999999998Q424.603125 148.2 424.603125 156.8Q424.603125 165.4 427.603125 171.7Q430.603125 178.0 435.903125 181.4Q441.203125 184.8 448.403125 184.8Z"/><circle cx="550.59" cy="186.00" r="19.00" fill="#C95A26"/></svg></a>
-  <nav><a class="lk" href="#comment">Comment ça marche</a><a class="lk" href="#suivis">Devis &amp; factures</a><a class="lk" href="#tarifs">Tarifs</a><a class="lk" href="#faq">Questions</a><a class="btn o s" href="#beta">Tester Nora<span class="fl">→</span></a></nav>
+  <nav><a class="lk" href="#comment">Comment ça marche</a><a class="lk" href="#suivis">Devis &amp; factures</a><a class="lk" href="#tarifs">Tarifs</a><a class="lk" href="#faq">Questions</a><a class="btn o s" href="#beta">Tester Nora<span class="fl"><i>→</i></span></a></nav>
 </div></header>
 
 <main id="top">
@@ -285,7 +305,7 @@ footer .ville{display:block;margin-top:6px;font-size:14px;color:#C9CEDA}
     <span class="surtitre">Pour les artisans · devis &amp; factures</span>
     <h1>Vous sur le terrain,<br>Nora au <em>bureau</em><i>.</i></h1>
     <p class="l">Nora relance vos devis en attente et vos factures impayées à votre place, en votre nom, au bon moment. Vous gardez vos soirées ; vos clients signent et paient.</p>
-    <div class="ctas"><a class="btn neon" href="#beta">Réserver ma place<span class="fl">→</span></a><a class="btn v" href="#comment">Voir comment ça marche<span class="fl">→</span></a></div>
+    <div class="ctas"><a class="btn neon" href="#beta">Réserver ma place<span class="fl"><i>→</i></span></a><a class="btn v" href="#comment">Voir comment ça marche<span class="fl"><i>→</i></span></a></div>
     <p class="micro"><b>Gratuit pendant 1 mois</b> · sans carte bancaire · aucun logiciel à changer</p>
   </div>
   <div class="phone">
@@ -389,11 +409,11 @@ footer .ville{display:block;margin-top:6px;font-size:14px;color:#C9CEDA}
   <div class="switch" role="group" aria-label="Période de paiement"><button class="on" data-p="m">Mensuel</button><button data-p="a">Annuel <small>2 mois offerts</small></button></div>
   <div class="prix">
     <div class="offre apparait"><h3>Relance des devis</h3><div class="pp" data-m="29 €" data-a="290 €">29 € <small data-m="/ mois" data-a="/ an">/ mois</small></div><div class="eq" data-a="soit 24,17 € / mois"></div>
-      <ul><li>Suivi de chaque devis jusqu’à la signature</li><li>Script d’appel en fin de séquence</li><li>Bilan mensuel des devis</li></ul><a class="btn v bulle" data-bulle="Alors ? Prêt à gagner du temps ?" href="#beta">Je teste gratuitement<span class="fl">→</span></a></div>
+      <ul><li>Suivi de chaque devis jusqu’à la signature</li><li>Script d’appel en fin de séquence</li><li>Bilan mensuel des devis</li></ul><a class="btn v bulle" data-bulle="Alors ? Prêt à gagner du temps ?" href="#beta">Je teste gratuitement<span class="fl"><i>→</i></span></a></div>
     <div class="offre vedette apparait"><span class="rib">Recommandé</span><h3>Devis et factures</h3><div class="pp" data-m="59 €" data-a="590 €">59 € <small data-m="/ mois" data-a="/ an">/ mois</small></div><div class="eq" data-a="soit 49,17 € / mois"></div>
-      <ul><li>Les deux suivis réunis</li><li>Préavis avant chaque relance ferme</li><li>Mise en demeure prête à envoyer</li><li>Bilan mensuel complet</li></ul><a class="btn o bulle" data-bulle="Alors ? Prêt à gagner du temps ?" href="#beta">Je teste gratuitement<span class="fl">→</span></a></div>
+      <ul><li>Les deux suivis réunis</li><li>Préavis avant chaque relance ferme</li><li>Mise en demeure prête à envoyer</li><li>Bilan mensuel complet</li></ul><a class="btn o bulle" data-bulle="Alors ? Prêt à gagner du temps ?" href="#beta">Je teste gratuitement<span class="fl"><i>→</i></span></a></div>
     <div class="offre apparait"><h3>Relance des factures</h3><div class="pp" data-m="39 €" data-a="390 €">39 € <small data-m="/ mois" data-a="/ an">/ mois</small></div><div class="eq" data-a="soit 32,50 € / mois"></div>
-      <ul><li>Rappel, relance ferme, pénalités légales</li><li>Préavis avant chaque relance ferme</li><li>Mise en demeure prête à envoyer</li></ul><a class="btn v bulle" data-bulle="Alors ? Prêt à gagner du temps ?" href="#beta">Je teste gratuitement<span class="fl">→</span></a></div>
+      <ul><li>Rappel, relance ferme, pénalités légales</li><li>Préavis avant chaque relance ferme</li><li>Mise en demeure prête à envoyer</li></ul><a class="btn v bulle" data-bulle="Alors ? Prêt à gagner du temps ?" href="#beta">Je teste gratuitement<span class="fl"><i>→</i></span></a></div>
   </div>
   <p class="cond"><b>Mise en route</b> : offerte pendant la bêta et en annuel. En mensuel, 99 € à distance, avec l’import de vos impayés et devis en cours et un bilan chiffré dès le premier jour, remboursés si vous arrêtez dans les 30 jours. TVA non applicable, art. 293 B du CGI.</p>
 </div></section>
@@ -418,7 +438,7 @@ footer .ville{display:block;margin-top:6px;font-size:14px;color:#C9CEDA}
     <div class="box">
       <p><b style="color:var(--bleu);font-size:18px">Inscription en 1 minute</b></p>
       <ul><li>1 mois gratuit, sans carte bancaire</li><li>Mise en route offerte, avec le bilan de vos impayés</li><li>Devis, factures ou les deux</li></ul>
-      <a class="btn neon" href="https://airtable.com/appdvWvInoFEb0hFc/pag7kkEvdOcc1fINe/form" target="_blank" rel="noopener">Réserver ma place<span class="fl">→</span></a>
+      <a class="btn neon" href="https://airtable.com/appdvWvInoFEb0hFc/pag7kkEvdOcc1fINe/form" target="_blank" rel="noopener">Réserver ma place<span class="fl"><i>→</i></span></a>
       <p class="mini">Ou écrivez-nous : <a href="mailto:contact@agencenora.fr">contact@agencenora.fr</a></p>
     </div>
   </div>
@@ -464,6 +484,29 @@ if (window.matchMedia('(hover: none)').matches && 'IntersectionObserver' in wind
   const bo = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { const b = e.target; setTimeout(() => b.classList.add('on'), 500); setTimeout(() => b.classList.remove('on'), 3500); bo.unobserve(b); } }), { threshold: .9 });
   document.querySelectorAll('.btn.bulle').forEach(b => bo.observe(b));
 }
+
+// Frises : la ligne orange avance avec le défilement et allume chaque étape au passage
+(function () {
+  const etapes = [...document.querySelectorAll('.jal')];
+  if (!etapes.length) return;
+  const reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function maj() {
+    const repere = window.innerHeight * 0.62;
+    etapes.forEach(e => {
+      const r = e.getBoundingClientRect();
+      const centre = r.top + 26;
+      e.classList.toggle('on', reduit || centre < repere);
+      if (e.nextElementSibling && e.nextElementSibling.classList.contains('jal')) {
+        const suivant = e.nextElementSibling.getBoundingClientRect().top + 26;
+        const p = reduit ? 1 : Math.max(0, Math.min(1, (repere - centre) / (suivant - centre)));
+        e.style.setProperty('--f', (p * 100).toFixed(1) + '%');
+      }
+    });
+  }
+  window.addEventListener('scroll', maj, { passive: true });
+  window.addEventListener('resize', maj);
+  maj();
+})();
 </script>
 </body>
 </html>
