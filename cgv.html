@@ -1,0 +1,218 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conditions générales de vente – Agence Nora</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bleu:#14233C;--orange:#C95A26;--orange-f:#A84716;--creme:#F7F4EE;--graphite:#383B3B;--ligne:#E4DED2;--blanc:#fff;--doux:#5C5F5F}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Lexend',Arial,sans-serif;background:var(--creme);color:var(--bleu);line-height:1.5}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.logo{display:block;height:auto}
+/* entête */
+header{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--ligne)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+header .logo{width:96px}
+nav{display:flex;gap:26px;align-items:center;font-size:15px}
+nav a{text-decoration:none;color:var(--graphite)}
+nav a:hover{color:var(--bleu)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:700;border-radius:12px;padding:14px 22px;font-size:17px;transition:transform .15s, background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.o{background:var(--orange);color:#fff}
+.btn.o:hover{background:var(--orange-f)}
+.btn.v{border:2px solid var(--bleu);color:var(--bleu);padding:12px 20px}
+.btn.s{padding:10px 16px;font-size:15px}
+@media(max-width:860px){nav .lk{display:none}}
+/* hero */
+.hero{padding:64px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.eyebrow{display:inline-block;background:#fff;border:1px solid var(--ligne);border-radius:30px;padding:6px 14px;font-size:14px;color:var(--graphite)}
+.hero h1{font-size:58px;line-height:1.03;letter-spacing:-1.5px;margin:18px 0 18px}
+.hero h1 i{font-style:normal;color:var(--orange)}
+.hero p.l{font-size:19px;color:var(--graphite);max-width:540px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 16px}
+.reass{font-size:14px;color:var(--doux)}
+.phone{justify-self:center;width:300px;aspect-ratio:9/19.2;border-radius:42px;background:#0b1424;padding:11px;box-shadow:0 30px 70px rgba(20,35,60,.35);position:relative}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:32px;display:block;background:var(--bleu)}
+.badge-flot{position:absolute;background:#fff;border-radius:14px;box-shadow:0 12px 30px rgba(20,35,60,.18);padding:10px 14px;font-size:13px;white-space:nowrap}
+.badge-flot b{display:block;font-size:15px}
+.b1{left:-120px;top:70px}.b2{right:-110px;top:300px}.b3{left:-100px;bottom:70px}
+.b1 b,.b3 b{color:var(--orange)}
+@media(max-width:960px){.hero .wrap{grid-template-columns:1fr}.hero h1{font-size:42px}.badge-flot{display:none}}
+/* bandeau chiffres */
+.chiffres{background:var(--bleu);color:var(--creme)}
+.chiffres .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:34px 24px}
+.chiffres div b{display:block;font-size:30px;font-weight:700;color:#fff}
+.chiffres div b i{font-style:normal;color:var(--orange)}
+.chiffres div span{font-size:14px;color:#C9CEDA}
+@media(max-width:760px){.chiffres .wrap{grid-template-columns:1fr 1fr}}
+/* sections */
+section.s{padding:88px 0}
+.kicker{font-size:14px;font-weight:600;color:var(--orange);text-transform:none;margin-bottom:10px}
+h2{font-size:42px;line-height:1.1;letter-spacing:-.8px;max-width:760px}
+h2 i{font-style:normal;color:var(--orange)}
+.intro{font-size:18px;color:var(--graphite);max-width:640px;margin-top:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.card{background:#fff;border:1px solid var(--ligne);border-radius:20px;padding:28px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--graphite);font-size:16px}
+.ic{width:44px;height:44px;border-radius:12px;background:#FBF1EB;color:var(--orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;margin-bottom:16px}
+@media(max-width:860px){.grid3{grid-template-columns:1fr}h2{font-size:32px}}
+/* étapes */
+.steps{counter-reset:e;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.step{position:relative;background:#fff;border:1px solid var(--ligne);border-radius:20px;padding:28px}
+.step::before{counter-increment:e;content:counter(e);width:46px;height:46px;border-radius:50%;background:var(--orange);color:#fff;font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.step h3{font-size:20px;margin-bottom:8px}.step p{color:var(--graphite)}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
+/* soirée */
+.soir{background:var(--bleu);color:var(--creme);border-radius:28px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.soir h2{color:#fff}
+.soir p{color:#C9CEDA;font-size:18px;margin-top:14px}
+.pile{position:relative;height:240px}
+.pile span{position:absolute;background:#fff;color:var(--bleu);border-radius:10px;padding:16px 20px;font-weight:700;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.pile span:nth-child(1){left:10%;top:20px;transform:rotate(-8deg)}
+.pile span:nth-child(2){left:40%;top:60px;transform:rotate(6deg)}
+.pile span:nth-child(3){left:18%;top:120px;transform:rotate(3deg)}
+.pile span:nth-child(4){left:52%;top:150px;transform:rotate(-5deg)}
+.pile em{position:absolute;right:4%;top:0;background:var(--orange);color:#fff;font-style:normal;font-weight:700;border-radius:30px;padding:8px 16px}
+@media(max-width:860px){.soir{grid-template-columns:1fr;padding:34px}}
+/* frises */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.frise{background:#fff;border:1px solid var(--ligne);border-radius:20px;padding:30px}
+.frise .tag{display:inline-block;font-size:13px;font-weight:600;background:#FBF1EB;color:var(--orange);border-radius:20px;padding:4px 12px;margin-bottom:10px}
+.frise h3{font-size:24px}
+.frise .pour{color:var(--graphite);margin:4px 0 22px}
+.jal{display:grid;grid-template-columns:62px 1fr;gap:14px;align-items:start;position:relative;padding-bottom:18px}
+.jal:not(:last-child)::after{content:"";position:absolute;left:30px;top:48px;bottom:0;width:2px;background:var(--ligne)}
+.jal .j{width:62px;height:44px;border-radius:12px;background:var(--creme);border:2px solid var(--bleu);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.jal.f .j{background:var(--orange);border-color:var(--orange);color:#fff}
+.jal b{display:block;font-size:16px;padding-top:2px}
+.jal p{font-size:14.5px;color:var(--graphite)}
+@media(max-width:860px){.duo{grid-template-columns:1fr}}
+/* main */
+.grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.it{background:#fff;border:1px solid var(--ligne);border-radius:16px;padding:22px}
+.it b{display:flex;gap:10px;align-items:center;font-size:17px;margin-bottom:6px}
+.it b::before{content:"✓";flex:0 0 26px;height:26px;border-radius:13px;background:var(--orange);color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center}
+.it p{color:var(--graphite);font-size:15px}
+@media(max-width:860px){.grid6{grid-template-columns:1fr}}
+/* bilan */
+.bilan{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.mail{background:#fff;border-radius:22px;padding:28px;box-shadow:0 20px 50px rgba(20,35,60,.14);max-width:440px}
+.mail .logo{width:70px;margin-bottom:14px}
+.mail .t{font-weight:700;font-size:18px}
+.mail .s2{color:var(--graphite);font-size:14px;margin:4px 0 6px}
+.mail .big{font-size:44px;font-weight:700;color:var(--orange);line-height:1.1}
+.mail .d{display:flex;gap:10px;margin-top:14px}
+.mail .d div{flex:1;background:var(--bleu);color:var(--creme);border-radius:12px;padding:12px;text-align:center;font-size:12px}
+.mail .d b{display:block;font-size:20px}
+.mail .r{display:flex;justify-content:space-between;font-size:14px;color:var(--graphite);border-bottom:1px solid var(--ligne);padding:9px 0}
+.mail .r b{color:var(--bleu)}
+.note{font-size:12px;color:var(--doux);margin-top:10px}
+@media(max-width:860px){.bilan{grid-template-columns:1fr}}
+/* tarifs */
+.switch{display:inline-flex;background:#fff;border:1px solid var(--ligne);border-radius:30px;padding:4px;margin-top:26px}
+.switch button{border:0;background:transparent;font:inherit;font-size:15px;padding:8px 18px;border-radius:24px;cursor:pointer;color:var(--graphite)}
+.switch button.on{background:var(--bleu);color:#fff}
+.switch small{color:var(--orange);font-weight:600}
+.switch button.on small{color:#F3C9B3}
+.prix{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px;align-items:stretch}
+.offre{background:#fff;border:1px solid var(--ligne);border-radius:22px;padding:30px;display:flex;flex-direction:column}
+.offre h3{font-size:20px}
+.offre .pp{font-size:46px;font-weight:700;margin:12px 0 2px;line-height:1}
+.offre .pp small{font-size:16px;font-weight:400;color:var(--doux)}
+.offre .eq{font-size:14px;color:var(--orange);font-weight:600;min-height:21px}
+.offre ul{list-style:none;margin:18px 0 22px;display:flex;flex-direction:column;gap:9px}
+.offre li{font-size:15px;color:var(--graphite);padding-left:24px;position:relative}
+.offre li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:700}
+.offre .btn{margin-top:auto}
+.offre.vedette{background:var(--bleu);color:#fff;border-color:var(--bleu);transform:translateY(-8px)}
+.offre.vedette li{color:#C9CEDA}.offre.vedette .pp small{color:#C9CEDA}
+.offre .rib{align-self:flex-start;background:var(--orange);color:#fff;font-size:12px;font-weight:600;border-radius:20px;padding:3px 10px;margin-bottom:10px}
+.cond{font-size:14px;color:var(--graphite);margin-top:22px;max-width:780px}
+@media(max-width:860px){.prix{grid-template-columns:1fr}.offre.vedette{transform:none}}
+/* bêta */
+.beta{background:var(--orange);color:#fff;border-radius:28px;padding:56px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.beta h2{color:#fff}.beta h2 i{color:var(--bleu)}
+.beta p{font-size:18px;margin-top:14px;opacity:.95}
+.beta .box{background:#fff;color:var(--bleu);border-radius:20px;padding:28px}
+.beta .box p{color:var(--graphite);font-size:15px;opacity:1;margin:0}
+.beta .box ul{list-style:none;margin:14px 0 20px;display:flex;flex-direction:column;gap:8px}
+.beta .box li{padding-left:24px;position:relative;font-size:15px;color:var(--graphite)}
+.beta .box li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:700}
+.beta .box .btn{width:100%}
+.beta .mini{font-size:13px;color:var(--doux);margin-top:12px;text-align:center}
+@media(max-width:860px){.beta{grid-template-columns:1fr;padding:32px}}
+/* faq */
+details{background:#fff;border:1px solid var(--ligne);border-radius:16px;padding:20px 24px;margin-top:12px}
+summary{font-weight:600;font-size:18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--orange);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--graphite);margin-top:10px}
+/* pied */
+footer{background:var(--bleu);color:#C9CEDA;padding:48px 0;margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer .logo{width:110px}
+footer a{color:#C9CEDA}
+footer .sig{color:#fff;font-weight:600;margin-top:10px}
+.apparait{opacity:0;transform:translateY(18px);transition:opacity .6s, transform .6s}
+.apparait.vu{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.apparait{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+.doc{max-width:780px;margin:0 auto;padding:56px 24px}
+.doc h1{font-size:40px;letter-spacing:-.8px;margin-bottom:24px}
+.doc h2{font-size:22px;margin:30px 0 8px}
+.doc p,.doc li{color:var(--graphite);font-size:16px}
+.doc ul{padding-left:20px}
+.doc table{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+.doc td,.doc th{border-bottom:1px solid var(--ligne);padding:10px 8px;text-align:left;vertical-align:top;color:var(--graphite)}
+.doc th{color:var(--bleu)}
+</style></head><body>
+<header><div class="wrap"><a href="index.html" aria-label="Accueil"><svg class="logo" role="img" aria-label="Nora" xmlns="http://www.w3.org/2000/svg" viewBox="50 96 516 120"><path fill="#14233C" d="M54.2 210.0V103.8H84.6L85.6 125.39999999999999L79.2 127.8Q81.4 120.6 87.10000000000001 114.69999999999999Q92.80000000000001 108.8 100.80000000000001 105.19999999999999Q108.8 101.6 117.60000000000001 101.6Q129.60000000000002 101.6 137.8 106.5Q146.0 111.39999999999999 150.2 121.1Q154.4 130.8 154.4 144.8V210.0H122.2V147.4Q122.2 141.0 120.4 136.8Q118.60000000000001 132.6 114.9 130.5Q111.2 128.39999999999998 105.8 128.6Q101.6 128.6 98.0 129.89999999999998Q94.4 131.2 91.80000000000001 133.7Q89.2 136.2 87.7 139.39999999999998Q86.2 142.6 86.2 146.4V210.0H70.4Q64.8 210.0 60.8 210.0Q56.8 210.0 54.2 210.0Z"/><path fill="#14233C" d="M231.2 212.0Q214.6 212.0 201.7 204.8Q188.8 197.6 181.3 185.2Q173.8 172.8 173.8 156.8Q173.8 140.8 181.3 128.4Q188.8 116.0 201.7 108.8Q214.6 101.6 231.2 101.6Q247.8 101.6 260.70000000000005 108.8Q273.6 116.0 281.0 128.4Q288.4 140.8 288.4 156.8Q288.4 172.8 281.0 185.2Q273.6 197.6 260.70000000000005 204.8Q247.8 212.0 231.2 212.0ZM231.2 184.4Q238.4 184.4 244.0 180.8Q249.60000000000002 177.2 252.8 171.0Q256.0 164.8 255.8 156.8Q256.0 148.8 252.8 142.5Q249.60000000000002 136.2 244.0 132.6Q238.4 129.0 231.2 129.0Q224.0 129.0 218.3 132.6Q212.6 136.2 209.39999999999998 142.5Q206.2 148.8 206.4 156.8Q206.2 164.8 209.39999999999998 171.0Q212.6 177.2 218.3 180.8Q224.0 184.4 231.2 184.4Z"/><path fill="#14233C" d="M309.403125 210.0V103.8H339.803125L341.203125 138.39999999999998L335.203125 131.8Q337.603125 123.19999999999999 343.103125 116.39999999999999Q348.603125 109.6 356.00312499999995 105.6Q363.403125 101.6 371.803125 101.6Q375.403125 101.6 378.50312499999995 102.19999999999999Q381.603125 102.8 384.203125 103.6L375.403125 139.0Q373.203125 137.6 369.503125 136.7Q365.803125 135.8 361.803125 135.8Q357.403125 135.8 353.603125 137.3Q349.803125 138.8 347.203125 141.6Q344.603125 144.39999999999998 343.103125 148.2Q341.603125 152.0 341.603125 156.8V210.0Z"/><path fill="#14233C" d="M439.603125 211.8Q426.203125 211.8 415.703125 204.7Q405.203125 197.6 399.003125 185.1Q392.803125 172.6 392.803125 156.8Q392.803125 140.6 399.003125 128.2Q405.203125 115.8 416.003125 108.69999999999999Q426.803125 101.6 440.603125 101.6Q448.203125 101.6 454.503125 103.8Q460.803125 106.0 465.603125 109.9Q470.403125 113.8 473.803125 118.9Q477.203125 124.0 478.803125 129.8L472.203125 129.0V103.8H504.003125V210.0H471.603125V184.4L478.803125 184.2Q477.203125 189.8 473.603125 194.8Q470.003125 199.8 464.803125 203.60000000000002Q459.603125 207.4 453.203125 209.60000000000002Q446.803125 211.8 439.603125 211.8ZM448.403125 184.8Q455.803125 184.8 461.203125 181.4Q466.603125 178.0 469.603125 171.7Q472.603125 165.4 472.603125 156.8Q472.603125 148.2 469.603125 141.89999999999998Q466.603125 135.6 461.203125 132.1Q455.803125 128.6 448.403125 128.6Q441.203125 128.6 435.903125 132.1Q430.603125 135.6 427.603125 141.89999999999998Q424.603125 148.2 424.603125 156.8Q424.603125 165.4 427.603125 171.7Q430.603125 178.0 435.903125 181.4Q441.203125 184.8 448.403125 184.8Z"/><circle cx="550.59" cy="186.00" r="19.00" fill="#C95A26"/></svg></a><nav><a class="btn o s" href="index.html#beta">Tester Nora</a></nav></div></header>
+<main class="doc"><h1>Conditions générales de vente et d’abonnement</h1>
+<p>Version du 10 novembre 2026. Elles s’appliquent à tout abonnement au service Nora souscrit par un professionnel, y compris pendant la phase de test (bêta).</p>
+<h2>Article 1 – Parties et objet</h2>
+<p>Le service Nora est édité par Sylvain L’Hospital, entrepreneur individuel (EI) exerçant sous le nom commercial « Agence Nora », SIRET 928 047 679 00032, 446 rue Aristide Briand, 73190 Challes-les-Eaux, contact@agencenora.fr (« le Prestataire »).</p>
+<p>Les présentes conditions régissent la mise à disposition, à un professionnel (« le Client »), d’un service en ligne d’automatisation du suivi et de la relance de ses devis et factures (« le Service »). Le Service est réservé aux professionnels agissant pour les besoins de leur activité.</p>
+<h2>Article 2 – Nature du Service</h2>
+<p>Le Service est un outil. Le Client l’utilise pour adresser, <b>en son propre nom et sous sa seule responsabilité</b>, des messages de suivi à ses propres clients et prospects. Il comprend notamment : la lecture des documents transmis, leur suivi selon un calendrier, la rédaction et l’envoi des relances, la lecture des réponses des clients du Client (mise en pause du suivi et transmission au Client), des notifications, un espace personnel et des bilans.</p>
+<p>Le Prestataire :</p>
+<ul><li>n’agit pas au nom ni pour le compte du Client auprès de ses débiteurs ;</li><li>ne reçoit, ne détient et ne manipule <b>aucun fonds</b> destiné au Client : les paiements sont effectués directement au Client ;</li><li>n’exerce aucune activité de recouvrement de créances, de conseil juridique ni de représentation ;</li><li>ne négocie ni les montants, ni les délais, ni les conditions commerciales du Client.</li></ul>
+<p>Les projets de mise en demeure générés par le Service sont des modèles. Ils sont adressés au seul Client, qui décide librement de les modifier, de les envoyer ou non.</p>
+<h2>Article 3 – Offres et prix</h2>
+<table><tr><th>Offre</th><th>Mensuel</th><th>Annuel</th></tr>
+<tr><td>Relance des devis</td><td>29 €</td><td>290 €</td></tr>
+<tr><td>Relance des factures</td><td>39 €</td><td>390 €</td></tr>
+<tr><td>Devis et factures</td><td>59 €</td><td>590 €</td></tr>
+<tr><td>Option marque blanche</td><td>+ 10 €</td><td>+ 100 €</td></tr></table>
+<p>TVA non applicable, art. 293 B du CGI. La mise en route à distance est facturée 99 € pour un abonnement mensuel, et remboursée si le Client résilie dans les 30 jours ; elle est offerte pour un abonnement annuel et pendant la phase de test. Une mise en route sur place (zone de Chambéry) peut être proposée moyennant un supplément de 100 €.</p>
+<p>La phase de test (bêta) est gratuite pendant un mois, sans moyen de paiement demandé. À son issue, le Client choisit librement de souscrire ou non ; à défaut, le Service s’arrête.</p>
+<p>Le Prestataire peut faire évoluer ses prix en prévenant le Client par email au moins 30 jours avant. Le Client qui refuse peut résilier sans frais avant l’entrée en vigueur.</p>
+<h2>Article 4 – Durée et résiliation</h2>
+<p>L’abonnement mensuel est <b>sans engagement</b> : il se renouvelle chaque mois et peut être résilié à tout moment, depuis le portail client ou par email, avec effet à la fin de la période en cours. Aucun remboursement au prorata n’est dû pour le mois entamé.</p>
+<p>L’abonnement annuel court douze mois et se renouvelle pour la même durée, sauf résiliation au moins 30 jours avant son échéance.</p>
+<p>En cas de manquement grave du Client (impayé de plus de 30 jours, usage contraire à l’article 6), le Prestataire peut suspendre puis résilier le Service après une mise en demeure restée sans effet pendant 8 jours.</p>
+<h2>Article 5 – Paiement</h2>
+<p>Les abonnements sont payables d’avance, à la date anniversaire de la souscription, par carte bancaire ou prélèvement SEPA via la plateforme de paiement Stripe. Les factures sont mises à disposition par email.</p>
+<p>Tout retard de paiement entraîne de plein droit des pénalités au taux d’intérêt appliqué par la Banque centrale européenne à son opération de refinancement la plus récente, majoré de 10 points, ainsi qu’une indemnité forfaitaire de 40 € pour frais de recouvrement (articles L441-10 et D441-5 du Code de commerce). Pas d’escompte pour paiement anticipé.</p>
+<h2>Article 6 – Obligations du Client</h2>
+<p>Le Client s’engage à :</p>
+<ul><li>ne transmettre que des documents exacts, correspondant à des créances ou devis réels ;</li><li>vérifier les informations extraites de chaque document avant le démarrage des relances, ou, s’il choisit un réglage de validation automatique, en assumer le fonctionnement ;</li><li>signaler sans délai, via les boutons prévus, tout paiement, accord, refus ou litige, afin d’arrêter les relances ;</li><li>disposer d’une base légale pour contacter ses clients et prospects, et les informer de l’usage du Service (voir l’accord de sous-traitance) ;</li><li>ne pas utiliser le Service pour des messages abusifs, mensongers ou de prospection non sollicitée.</li></ul>
+<p>Le Client reste seul responsable du contenu des messages envoyés en son nom, du choix d’envoyer une mise en demeure et des relations avec ses propres clients.</p>
+<h2>Article 7 – Obligations du Prestataire</h2>
+<p>Le Prestataire met en œuvre les moyens raisonnables pour assurer le bon fonctionnement du Service. Il s’agit d’une <b>obligation de moyens</b>. Le Service dépend de prestataires techniques tiers (hébergement, envoi d’emails, intelligence artificielle) ; des interruptions ponctuelles peuvent survenir. Le Prestataire informe le Client de toute interruption prévisible de plus de 24 heures.</p>
+<h2>Article 8 – Responsabilité</h2>
+<p>Le Prestataire ne garantit aucun résultat : ni le paiement des factures, ni la signature des devis. Il ne peut être tenu responsable des conséquences d’une information erronée validée par le Client, d’un paiement ou d’un accord non signalé, ni du contenu d’un document envoyé par le Client à un tiers.</p>
+<p>Sauf faute lourde ou intentionnelle, la responsabilité totale du Prestataire est limitée aux sommes payées par le Client au titre des douze derniers mois.</p>
+<h2>Article 9 – Données personnelles</h2>
+<p>Pour les données de ses clients et prospects traitées par le Service, le Client est responsable de traitement et le Prestataire son sous-traitant. Leurs obligations respectives sont précisées dans l’<a href="sous-traitance.html">accord de sous-traitance des données</a>, qui fait partie intégrante des présentes conditions. Les données du Client lui-même sont traitées selon la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+<h2>Article 10 – Mention « Relance envoyée avec Nora »</h2>
+<p>Sauf souscription de l’option marque blanche, certains messages (suivis de devis et premiers rappels de facture) comportent une mention discrète du Service. Elle ne figure jamais sur les relances fermes, les rappels de pénalités ni les projets de mise en demeure.</p>
+<h2>Article 11 – Fin du contrat et réversibilité</h2>
+<p>À la fin de l’abonnement, les relances s’arrêtent. Sur demande dans les 30 jours, le Prestataire remet au Client un export de ses données (tableur). Les données sont ensuite supprimées dans un délai de 90 jours, sauf obligation légale de conservation.</p>
+<h2>Article 12 – Acceptation</h2>
+<p>L’inscription à la phase de test ou la souscription d’un abonnement vaut acceptation des présentes conditions et de l’accord de sous-traitance. La date d’acceptation est conservée.</p>
+<h2>Article 13 – Droit applicable et litiges</h2>
+<p>Les présentes conditions sont soumises au droit français. En cas de litige, les parties recherchent d’abord une solution amiable. À défaut, compétence est attribuée aux tribunaux du ressort de Chambéry.</p></main>
+<footer><div class="wrap"><div><svg class="logo" role="img" aria-label="Nora" xmlns="http://www.w3.org/2000/svg" viewBox="50 96 516 120"><path fill="#F7F4EE" d="M54.2 210.0V103.8H84.6L85.6 125.39999999999999L79.2 127.8Q81.4 120.6 87.10000000000001 114.69999999999999Q92.80000000000001 108.8 100.80000000000001 105.19999999999999Q108.8 101.6 117.60000000000001 101.6Q129.60000000000002 101.6 137.8 106.5Q146.0 111.39999999999999 150.2 121.1Q154.4 130.8 154.4 144.8V210.0H122.2V147.4Q122.2 141.0 120.4 136.8Q118.60000000000001 132.6 114.9 130.5Q111.2 128.39999999999998 105.8 128.6Q101.6 128.6 98.0 129.89999999999998Q94.4 131.2 91.80000000000001 133.7Q89.2 136.2 87.7 139.39999999999998Q86.2 142.6 86.2 146.4V210.0H70.4Q64.8 210.0 60.8 210.0Q56.8 210.0 54.2 210.0Z"/><path fill="#F7F4EE" d="M231.2 212.0Q214.6 212.0 201.7 204.8Q188.8 197.6 181.3 185.2Q173.8 172.8 173.8 156.8Q173.8 140.8 181.3 128.4Q188.8 116.0 201.7 108.8Q214.6 101.6 231.2 101.6Q247.8 101.6 260.70000000000005 108.8Q273.6 116.0 281.0 128.4Q288.4 140.8 288.4 156.8Q288.4 172.8 281.0 185.2Q273.6 197.6 260.70000000000005 204.8Q247.8 212.0 231.2 212.0ZM231.2 184.4Q238.4 184.4 244.0 180.8Q249.60000000000002 177.2 252.8 171.0Q256.0 164.8 255.8 156.8Q256.0 148.8 252.8 142.5Q249.60000000000002 136.2 244.0 132.6Q238.4 129.0 231.2 129.0Q224.0 129.0 218.3 132.6Q212.6 136.2 209.39999999999998 142.5Q206.2 148.8 206.4 156.8Q206.2 164.8 209.39999999999998 171.0Q212.6 177.2 218.3 180.8Q224.0 184.4 231.2 184.4Z"/><path fill="#F7F4EE" d="M309.403125 210.0V103.8H339.803125L341.203125 138.39999999999998L335.203125 131.8Q337.603125 123.19999999999999 343.103125 116.39999999999999Q348.603125 109.6 356.00312499999995 105.6Q363.403125 101.6 371.803125 101.6Q375.403125 101.6 378.50312499999995 102.19999999999999Q381.603125 102.8 384.203125 103.6L375.403125 139.0Q373.203125 137.6 369.503125 136.7Q365.803125 135.8 361.803125 135.8Q357.403125 135.8 353.603125 137.3Q349.803125 138.8 347.203125 141.6Q344.603125 144.39999999999998 343.103125 148.2Q341.603125 152.0 341.603125 156.8V210.0Z"/><path fill="#F7F4EE" d="M439.603125 211.8Q426.203125 211.8 415.703125 204.7Q405.203125 197.6 399.003125 185.1Q392.803125 172.6 392.803125 156.8Q392.803125 140.6 399.003125 128.2Q405.203125 115.8 416.003125 108.69999999999999Q426.803125 101.6 440.603125 101.6Q448.203125 101.6 454.503125 103.8Q460.803125 106.0 465.603125 109.9Q470.403125 113.8 473.803125 118.9Q477.203125 124.0 478.803125 129.8L472.203125 129.0V103.8H504.003125V210.0H471.603125V184.4L478.803125 184.2Q477.203125 189.8 473.603125 194.8Q470.003125 199.8 464.803125 203.60000000000002Q459.603125 207.4 453.203125 209.60000000000002Q446.803125 211.8 439.603125 211.8ZM448.403125 184.8Q455.803125 184.8 461.203125 181.4Q466.603125 178.0 469.603125 171.7Q472.603125 165.4 472.603125 156.8Q472.603125 148.2 469.603125 141.89999999999998Q466.603125 135.6 461.203125 132.1Q455.803125 128.6 448.403125 128.6Q441.203125 128.6 435.903125 132.1Q430.603125 135.6 427.603125 141.89999999999998Q424.603125 148.2 424.603125 156.8Q424.603125 165.4 427.603125 171.7Q430.603125 178.0 435.903125 181.4Q441.203125 184.8 448.403125 184.8Z"/><circle cx="550.59" cy="186.00" r="19.00" fill="#C95A26"/></svg><p class="sig">Vous sur le terrain, Nora au bureau.</p></div><div style="text-align:right;font-size:14px;line-height:1.9"><a href="mailto:contact@agencenora.fr">contact@agencenora.fr</a><br><a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a> · <a href="sous-traitance.html">Sous-traitance des données</a> · <a href="confidentialite.html">Confidentialité</a></div></div></footer>
+</body></html>
