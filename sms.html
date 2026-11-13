@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<link rel="canonical" href="https://agencenora.fr/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nora – Relance automatique des devis et factures pour artisans</title>
+<meta name="description" content="Nora relance vos devis en attente et vos factures impayées à votre place, en votre nom, au bon moment. Vous sur le terrain, Nora au bureau.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314233C'/><circle cx='44' cy='44' r='8' fill='%23C95A26'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bleu:#14233C;--orange:#C95A26;--orange-f:#A84716;--creme:#F7F4EE;--graphite:#383B3B;--ligne:#E4DED2;--blanc:#fff;--doux:#5C5F5F}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',Arial,sans-serif;background:var(--creme);color:var(--bleu);line-height:1.5}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.logo{display:block;height:auto}
+/* entête */
+header{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--ligne)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+header .logo{width:96px}
+nav{display:flex;gap:26px;align-items:center;font-size:15px}
+nav a{text-decoration:none;color:var(--graphite)}
+nav a:hover{color:var(--bleu)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:700;border-radius:12px;padding:14px 22px;font-size:17px;transition:transform .15s, background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.o{background:var(--orange);color:#fff}
+.btn.o:hover{background:var(--orange-f)}
+.btn.v{border:2px solid var(--bleu);color:var(--bleu);padding:12px 20px}
+.btn.s{padding:10px 16px;font-size:15px}
+@media(max-width:860px){nav .lk{display:none}}
+/* hero */
+.hero{padding:64px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.eyebrow{display:inline-block;background:#fff;border:1px solid var(--ligne);border-radius:30px;padding:6px 14px;font-size:14px;color:var(--graphite)}
+.hero h1{font-size:58px;line-height:1.03;letter-spacing:-1.5px;margin:18px 0 18px}
+.hero h1 i{font-style:normal;color:var(--orange)}
+.hero p.l{font-size:19px;color:var(--graphite);max-width:540px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 16px}
+.reass{font-size:14px;color:var(--doux)}
+.phone{justify-self:center;width:320px;aspect-ratio:9/16.4;border-radius:42px;background:#0b1424;padding:11px;box-shadow:0 30px 70px rgba(20,35,60,.35);position:relative}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:32px;display:block;background:var(--bleu)}
+.badge-flot{position:absolute;background:#fff;border-radius:14px;box-shadow:0 12px 30px rgba(20,35,60,.18);padding:10px 14px;font-size:13px;white-space:nowrap}
+.badge-flot b{display:block;font-size:15px}
+.b1{left:-120px;top:70px}.b2{right:-110px;top:300px}.b3{left:-100px;bottom:70px}
+.b1 b,.b3 b{color:var(--orange)}
+@media(max-width:960px){.hero .wrap{grid-template-columns:1fr}.hero h1{font-size:42px}.badge-flot{display:none}}
+/* bandeau chiffres */
+.chiffres{background:var(--bleu);color:var(--creme)}
+.chiffres .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:34px 24px}
+.chiffres div b{display:block;font-size:30px;font-weight:700;color:#fff}
+.chiffres div b i{font-style:normal;color:var(--orange)}
+.chiffres div span{font-size:14px;color:#C9CEDA}
+@media(max-width:760px){.chiffres .wrap{grid-template-columns:1fr 1fr}}
+/* sections */
+section.s{padding:88px 0}
+.kicker{font-size:14px;font-weight:600;color:var(--orange);text-transform:none;margin-bottom:10px}
+h2{font-size:42px;line-height:1.1;letter-spacing:-.8px;max-width:760px}
+h2 i{font-style:normal;color:var(--orange)}
+.intro{font-size:18px;color:var(--graphite);max-width:640px;margin-top:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.card{background:#fff;border:1px solid var(--ligne);border-radius:20px;padding:28px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--graphite);font-size:16px}
+.ic{width:44px;height:44px;border-radius:12px;background:#FBF1EB;color:var(--orange);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;margin-bottom:16px}
+@media(max-width:860px){.grid3{grid-template-columns:1fr}h2{font-size:32px}}
+/* étapes */
+.steps{counter-reset:e;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.step{position:relative;background:#fff;border:1px solid var(--ligne);border-radius:20px;padding:28px}
+.step::before{counter-increment:e;content:counter(e);width:46px;height:46px;border-radius:50%;background:var(--orange);color:#fff;font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.step h3{font-size:20px;margin-bottom:8px}.step p{color:var(--graphite)}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
+/* soirée */
+.soir{background:var(--bleu);color:var(--creme);border-radius:28px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.soir h2{color:#fff}
+.soir p{color:#C9CEDA;font-size:18px;margin-top:14px}
+.pile{position:relative;height:240px}
+.pile span{position:absolute;background:#fff;color:var(--bleu);border-radius:10px;padding:16px 20px;font-weight:700;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.pile span:nth-child(1){left:10%;top:20px;transform:rotate(-8deg)}
+.pile span:nth-child(2){left:40%;top:60px;transform:rotate(6deg)}
+.pile span:nth-child(3){left:18%;top:120px;transform:rotate(3deg)}
+.pile span:nth-child(4){left:52%;top:150px;transform:rotate(-5deg)}
+.pile em{position:absolute;right:4%;top:0;background:var(--orange);color:#fff;font-style:normal;font-weight:700;border-radius:30px;padding:8px 16px}
+@media(max-width:860px){.soir{grid-template-columns:1fr;padding:34px}}
+/* frises */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.frise{background:#fff;border:1px solid var(--ligne);border-radius:20px;padding:30px}
+.frise .tag{display:inline-block;font-size:13px;font-weight:600;background:#FBF1EB;color:var(--orange);border-radius:20px;padding:4px 12px;margin-bottom:10px}
+.frise h3{font-size:24px}
+.frise .pour{color:var(--graphite);margin:4px 0 22px}
+.jal{display:grid;grid-template-columns:62px 1fr;gap:14px;align-items:start;position:relative;padding-bottom:18px}
+.jal:not(:last-child)::after{content:"";position:absolute;left:30px;top:48px;bottom:0;width:2px;background:var(--ligne)}
+.jal .j{width:62px;height:44px;border-radius:12px;background:var(--creme);border:2px solid var(--bleu);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.jal.f .j{background:var(--orange);border-color:var(--orange);color:#fff}
+.jal b{display:block;font-size:16px;padding-top:2px}
+.jal p{font-size:14.5px;color:var(--graphite)}
+@media(max-width:860px){.duo{grid-template-columns:1fr}}
+/* main */
+.grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.it{background:#fff;border:1px solid var(--ligne);border-radius:16px;padding:22px}
+.it b{display:flex;gap:10px;align-items:center;font-size:17px;margin-bottom:6px}
+.it b::before{content:"✓";flex:0 0 26px;height:26px;border-radius:13px;background:var(--orange);color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center}
+.it p{color:var(--graphite);font-size:15px}
+@media(max-width:860px){.grid6{grid-template-columns:1fr}}
+/* bilan */
+.bilan{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.mail{background:#fff;border-radius:22px;padding:28px;box-shadow:0 20px 50px rgba(20,35,60,.14);max-width:440px}
+.mail .logo{width:70px;margin-bottom:14px}
+.mail .t{font-weight:700;font-size:18px}
+.mail .s2{color:var(--graphite);font-size:14px;margin:4px 0 6px}
+.mail .big{font-size:44px;font-weight:700;color:var(--orange);line-height:1.1}
+.mail .d{display:flex;gap:10px;margin-top:14px}
+.mail .d div{flex:1;background:var(--bleu);color:var(--creme);border-radius:12px;padding:12px;text-align:center;font-size:12px}
+.mail .d b{display:block;font-size:20px}
+.mail .r{display:flex;justify-content:space-between;font-size:14px;color:var(--graphite);border-bottom:1px solid var(--ligne);padding:9px 0}
+.mail .r b{color:var(--bleu)}
+.note{font-size:12px;color:var(--doux);margin-top:10px}
+@media(max-width:860px){.bilan{grid-template-columns:1fr}}
+/* tarifs */
+.switch{display:inline-flex;background:#fff;border:1px solid var(--ligne);border-radius:30px;padding:4px;margin-top:26px}
+.switch button{border:0;background:transparent;font:inherit;font-size:15px;padding:8px 18px;border-radius:24px;cursor:pointer;color:var(--graphite)}
+.switch button.on{background:var(--bleu);color:#fff}
+.switch small{color:var(--orange);font-weight:600}
+.switch button.on small{color:#F3C9B3}
+.prix{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px;align-items:stretch}
+.offre{background:#fff;border:1px solid var(--ligne);border-radius:22px;padding:30px;display:flex;flex-direction:column}
+.offre h3{font-size:20px}
+.offre .pp{font-size:46px;font-weight:700;margin:12px 0 2px;line-height:1}
+.offre .pp small{font-size:16px;font-weight:400;color:var(--doux)}
+.offre .eq{font-size:14px;color:var(--orange);font-weight:600;min-height:21px}
+.offre ul{list-style:none;margin:18px 0 22px;display:flex;flex-direction:column;gap:9px}
+.offre li{font-size:15px;color:var(--graphite);padding-left:24px;position:relative}
+.offre li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:700}
+.offre .btn{margin-top:auto}
+.offre.vedette{background:var(--bleu);color:#fff;border-color:var(--bleu);transform:translateY(-8px)}
+.offre.vedette li{color:#C9CEDA}.offre.vedette .pp small{color:#C9CEDA}
+.offre .rib{align-self:flex-start;background:var(--orange);color:#fff;font-size:12px;font-weight:600;border-radius:20px;padding:3px 10px;margin-bottom:10px}
+.cond{font-size:14px;color:var(--graphite);margin-top:22px;max-width:780px}
+@media(max-width:860px){.prix{grid-template-columns:1fr}.offre.vedette{transform:none}}
+/* bêta */
+.beta{background:var(--orange);color:#fff;border-radius:28px;padding:56px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.beta h2{color:#fff}.beta h2 i{color:var(--bleu)}
+.beta p{font-size:18px;margin-top:14px;opacity:.95}
+.beta .box{background:#fff;color:var(--bleu);border-radius:20px;padding:28px}
+.beta .box p{color:var(--graphite);font-size:15px;opacity:1;margin:0}
+.beta .box ul{list-style:none;margin:14px 0 20px;display:flex;flex-direction:column;gap:8px}
+.beta .box li{padding-left:24px;position:relative;font-size:15px;color:var(--graphite)}
+.beta .box li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:700}
+.beta .box .btn{width:100%}
+.beta .mini{font-size:13px;color:var(--doux);margin-top:12px;text-align:center}
+@media(max-width:860px){.beta{grid-template-columns:1fr;padding:32px}}
+/* faq */
+details{background:#fff;border:1px solid var(--ligne);border-radius:16px;padding:20px 24px;margin-top:12px}
+summary{font-weight:600;font-size:18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--orange);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--graphite);margin-top:10px}
+/* pied */
+footer{background:var(--bleu);color:#C9CEDA;padding:48px 0;margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer .logo{width:110px}
+footer a{color:#C9CEDA}
+footer .sig{color:#fff;font-weight:600;margin-top:10px}
+.apparait{opacity:0;transform:translateY(18px);transition:opacity .6s, transform .6s}
+.apparait.vu{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.apparait{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ===== Modernisation : moins de gabarit, plus de caractère ===== */
+.surtitre{display:inline-flex;align-items:center;gap:12px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--doux)}
+.surtitre::before{content:"";width:32px;height:2px;background:var(--orange)}
+.kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--doux);font-weight:500}
+.hero p.l{font-size:20px;color:var(--graphite)}
+.badge-flot{border-radius:12px;padding:12px 16px 12px 30px;font-size:13px;color:var(--doux)}
+.badge-flot::before{content:"";position:absolute;left:14px;top:18px;width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.badge-flot b{color:var(--bleu)!important;font-size:14px}
+/* blocs sans boîtes */
+.grid3 .card{background:none;border:0;border-top:2px solid var(--bleu);border-radius:0;padding:26px 0 0}
+.grid3{counter-reset:p;gap:40px}
+.grid3 .card::before{counter-increment:p;content:"0" counter(p);display:block;font-size:13px;font-weight:600;color:var(--orange);margin-bottom:18px;letter-spacing:.1em}
+.grid3 .card h3{font-size:22px}
+.step{background:none;border:0;border-top:2px solid var(--bleu);border-radius:0;padding:26px 0 0}
+.steps{gap:40px}
+.step::before{content:"0" counter(e);width:auto;height:auto;background:none;border-radius:0;color:var(--orange);font-size:56px;font-weight:700;letter-spacing:-.04em;justify-content:flex-start;margin-bottom:10px;line-height:1}
+.step h3{font-size:22px}
+.it{background:none;border:0;border-top:1px solid var(--ligne);border-radius:0;padding:22px 0 0}
+.it b::before{content:"";flex:0 0 18px;height:2px;border-radius:0;background:var(--orange)}
+.grid6{gap:28px 40px}
+.offre li::before,.beta .box li::before{content:"—"}
+/* section « à votre nom » */
+.nom{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:end}
+.nom .mots{font-size:clamp(44px,6vw,84px);line-height:1.02;letter-spacing:-.04em;font-weight:700}
+.nom .mots span{display:block}
+.nom .mots span:nth-child(2){color:#6E7A90}
+.nom .mots span:nth-child(3){color:#A9A497}
+.nom .mots i{font-style:normal;color:var(--orange)}
+.nom p{font-size:19px;line-height:1.6;color:var(--graphite)}
+@media(max-width:860px){.nom{grid-template-columns:1fr;gap:24px}}
+/* boutons plus vivants */
+.btn.o,.btn.v{border-radius:999px;padding:8px 8px 8px 24px;gap:16px;font-weight:600}
+.btn .fl{width:42px;height:42px;border-radius:50%;background:#fff;color:var(--orange);display:inline-flex;align-items:center;justify-content:center;font-size:18px;transition:transform .25s ease}
+.btn.v .fl{background:var(--bleu);color:#fff}
+.btn:hover .fl{transform:translateX(4px) rotate(-45deg)}
+.btn.o:hover{background:var(--orange-f);transform:translateY(-2px);box-shadow:0 12px 26px rgba(201,90,38,.35)}
+.btn.v:hover{background:var(--bleu);color:#fff}
+.btn.v:hover .fl{background:#fff;color:var(--bleu)}
+.btn.s{padding:6px 6px 6px 18px;font-size:15px}
+.btn.s .fl{width:32px;height:32px;font-size:15px}
+.micro{font-size:14px;color:var(--doux);margin-top:-2px}
+.micro b{color:var(--bleu);font-weight:600}
+.offre .btn{justify-content:space-between}
+.beta .box .btn{justify-content:space-between}
+
+/* ===== Bouton enseigne néon : éteint au repos, s'allume en grésillant au survol ===== */
+.btn.neon{position:relative;display:inline-flex;align-items:center;gap:16px;background:#0E1A2E;border:0;border-radius:18px;padding:14px 26px 16px;
+  font-family:'Lexend',Arial,sans-serif;font-weight:600;font-size:28px;letter-spacing:-.02em;text-transform:none;
+  color:#7D6A60;text-shadow:none;box-shadow:inset 0 0 0 2px rgba(255,255,255,.05),0 14px 30px rgba(14,26,46,.35);transition:transform .25s ease}
+.btn.neon::before{content:"";position:absolute;inset:6px;border-radius:13px;border:2px solid rgba(255,138,76,.18);pointer-events:none;transition:border-color .2s, box-shadow .2s}
+.btn.neon .fl{background:transparent;width:auto;height:auto;border-radius:0;color:inherit;font-size:26px;font-family:'Lexend',Arial,sans-serif;font-weight:600;text-shadow:inherit;box-shadow:none}
+/* tube allumé */
+.btn.neon:hover,.btn.neon.on{color:#FFF1E8;text-shadow:0 0 2px #fff,0 0 6px #FFB48A,0 0 12px #FF7A33,0 0 24px #FF6A1F,0 0 42px rgba(255,106,31,.7);animation:allumage .9s linear both}
+.btn.neon:hover::before,.btn.neon.on::before{border-color:rgba(255,138,76,.6);box-shadow:0 0 10px rgba(255,122,51,.4)}
+.btn.neon:hover{transform:translateY(-2px) rotate(-1deg)}
+.btn.neon:hover .fl{transform:translateX(5px)}
+/* séquence d'allumage : quelques ratés, puis le tube tient */
+@keyframes allumage{
+  0%{color:#7D6A60;text-shadow:none}
+  8%{color:#FFF1E8;text-shadow:0 0 2px #fff,0 0 10px #FF7A33,0 0 24px #FF6A1F}
+  12%{color:#7D6A60;text-shadow:none}
+  22%{color:#FFF1E8;text-shadow:0 0 2px #fff,0 0 10px #FF7A33}
+  26%{color:#9A8172;text-shadow:none}
+  40%{color:#FFF1E8;text-shadow:0 0 2px #fff,0 0 8px #FFB48A,0 0 18px #FF7A33}
+  44%{color:#9A8172;text-shadow:0 0 4px rgba(255,122,51,.4)}
+  58%,100%{color:#FFF1E8;text-shadow:0 0 2px #fff,0 0 6px #FFB48A,0 0 12px #FF7A33,0 0 24px #FF6A1F,0 0 42px rgba(255,106,31,.7)}
+}
+@media (prefers-reduced-motion: reduce){.btn.neon:hover,.btn.neon.on{animation:none}}
+
+/* ===== Chaleur : texte plus humain, accents manuscrits, autocollant ===== */
+h1,h2,h3,.chiffres b,.offre .pp,.mail .big,.nom .mots,.btn,.jal .j,.step::before,.grid3 .card::before{font-family:'Lexend',Arial,sans-serif}
+p,li,summary,.intro{letter-spacing:-.003em}
+h2 i,.hero h1 em,.aime h2 i{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:var(--orange);letter-spacing:-.01em;font-size:1.12em;line-height:.9}
+.hero h1 em{font-size:1.1em}
+.beta h2 i{color:var(--bleu)}
+.soir h2 i{color:var(--orange)}
+/* autocollant rond qui tourne doucement */
+.sticker{position:absolute;right:-46px;top:-34px;width:118px;height:118px;z-index:3;animation:tourne 22s linear infinite}
+.sticker svg{width:100%;height:100%;display:block}
+@keyframes tourne{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.sticker{animation:none}}
+@media(max-width:960px){.sticker{right:-20px;top:-26px;width:96px;height:96px}}
+/* section « Nora aime / moins » */
+.aime .lst{margin-top:44px;border-top:2px solid var(--bleu)}
+.aime .rg{display:grid;grid-template-columns:160px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--ligne);align-items:baseline}
+.aime .rg b{font-family:'Lexend',sans-serif;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+.aime .rg.oui b{color:var(--orange)}
+.aime .rg.non b{color:var(--doux)}
+.aime .rg span{font-size:22px;color:var(--bleu)}
+.aime .rg.non span{color:var(--doux);text-decoration:line-through;text-decoration-color:rgba(201,90,38,.6);text-decoration-thickness:2px}
+.aime .fin{font-size:19px;color:var(--graphite);margin-top:30px;max-width:640px}
+@media(max-width:700px){.aime .rg{grid-template-columns:1fr;gap:4px}.aime .rg span{font-size:19px}}
+footer .ville{display:block;margin-top:6px;font-size:14px;color:#C9CEDA}
+
+/* bulle d'encouragement au survol des boutons d'essai */
+.btn.bulle{position:relative;overflow:visible}
+.btn.bulle::after{content:attr(data-bulle);position:absolute;left:50%;bottom:calc(100% + 16px);transform:translate(-50%,10px) scale(.85) rotate(0);opacity:0;
+  background:var(--bleu);color:#fff;font-family:'DM Sans',Arial,sans-serif;font-weight:500;font-size:15px;letter-spacing:0;text-transform:none;white-space:nowrap;
+  padding:11px 18px;border-radius:16px;box-shadow:0 12px 26px rgba(20,35,60,.25);pointer-events:none;
+  transition:opacity .2s ease,transform .45s cubic-bezier(.34,1.56,.64,1)}
+.btn.bulle::before{content:"";position:absolute;left:50%;bottom:calc(100% + 8px);width:14px;height:14px;background:var(--bleu);transform:translateX(-50%) rotate(45deg) scale(.6);opacity:0;transition:opacity .2s, transform .45s cubic-bezier(.34,1.56,.64,1);border-radius:2px}
+.btn.bulle:hover::after,.btn.bulle.on::after{opacity:1;transform:translate(-50%,0) scale(1) rotate(-2deg)}
+.btn.bulle:hover::before,.btn.bulle.on::before{opacity:1;transform:translateX(-50%) rotate(45deg) scale(1)}
+.offre.vedette .btn.bulle::after,.offre.vedette .btn.bulle::before{background:var(--orange)}
+@media (prefers-reduced-motion: reduce){.btn.bulle::after,.btn.bulle::before{transition:opacity .2s}}
+
+/* ===== Frises animées : la ligne se remplit au défilement, chaque étape s'allume ===== */
+.frise .pour{min-height:3.4em}
+.jal{min-height:104px;padding-bottom:0}
+.jal:not(:last-child)::after{top:52px;bottom:4px;background:linear-gradient(var(--orange) var(--f,0%),var(--ligne) var(--f,0%))}
+.jal .j{transition:background .35s ease,color .35s ease,border-color .35s ease,transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s}
+.jal>div{opacity:.38;transform:translateX(-6px);transition:opacity .45s ease,transform .45s ease}
+.jal.on>div{opacity:1;transform:none}
+.jal.on .j{background:var(--bleu);border-color:var(--bleu);color:#fff;transform:scale(1.06);box-shadow:0 6px 16px rgba(20,35,60,.18)}
+.jal.f.on .j{background:var(--orange);border-color:var(--orange);box-shadow:0 0 0 6px rgba(201,90,38,.15),0 6px 16px rgba(201,90,38,.35)}
+.jal.f .j{background:var(--creme);border-color:var(--orange);color:var(--orange)}
+@media (prefers-reduced-motion: reduce){.jal>div{opacity:1;transform:none}.jal .j{transition:none}}
+/* ===== Flèches des boutons : elle file vers la droite et revient, au lieu de pivoter ===== */
+.btn .fl{overflow:hidden}
+.btn .fl i{font-style:normal;display:inline-block}
+.btn:hover .fl{transform:none}
+.btn:hover .fl i{animation:passe .5s ease}
+@keyframes passe{0%{transform:translateX(0);opacity:1}45%{transform:translateX(170%);opacity:0}46%{transform:translateX(-170%);opacity:0}100%{transform:translateX(0);opacity:1}}
+.btn.o:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion: reduce){.btn:hover .fl i{animation:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a href="#top" aria-label="Accueil"><svg class="logo" role="img" aria-label="Nora" xmlns="http://www.w3.org/2000/svg" viewBox="50 96 516 120"><path fill="#14233C" d="M54.2 210.0V103.8H84.6L85.6 125.39999999999999L79.2 127.8Q81.4 120.6 87.10000000000001 114.69999999999999Q92.80000000000001 108.8 100.80000000000001 105.19999999999999Q108.8 101.6 117.60000000000001 101.6Q129.60000000000002 101.6 137.8 106.5Q146.0 111.39999999999999 150.2 121.1Q154.4 130.8 154.4 144.8V210.0H122.2V147.4Q122.2 141.0 120.4 136.8Q118.60000000000001 132.6 114.9 130.5Q111.2 128.39999999999998 105.8 128.6Q101.6 128.6 98.0 129.89999999999998Q94.4 131.2 91.80000000000001 133.7Q89.2 136.2 87.7 139.39999999999998Q86.2 142.6 86.2 146.4V210.0H70.4Q64.8 210.0 60.8 210.0Q56.8 210.0 54.2 210.0Z"/><path fill="#14233C" d="M231.2 212.0Q214.6 212.0 201.7 204.8Q188.8 197.6 181.3 185.2Q173.8 172.8 173.8 156.8Q173.8 140.8 181.3 128.4Q188.8 116.0 201.7 108.8Q214.6 101.6 231.2 101.6Q247.8 101.6 260.70000000000005 108.8Q273.6 116.0 281.0 128.4Q288.4 140.8 288.4 156.8Q288.4 172.8 281.0 185.2Q273.6 197.6 260.70000000000005 204.8Q247.8 212.0 231.2 212.0ZM231.2 184.4Q238.4 184.4 244.0 180.8Q249.60000000000002 177.2 252.8 171.0Q256.0 164.8 255.8 156.8Q256.0 148.8 252.8 142.5Q249.60000000000002 136.2 244.0 132.6Q238.4 129.0 231.2 129.0Q224.0 129.0 218.3 132.6Q212.6 136.2 209.39999999999998 142.5Q206.2 148.8 206.4 156.8Q206.2 164.8 209.39999999999998 171.0Q212.6 177.2 218.3 180.8Q224.0 184.4 231.2 184.4Z"/><path fill="#14233C" d="M309.403125 210.0V103.8H339.803125L341.203125 138.39999999999998L335.203125 131.8Q337.603125 123.19999999999999 343.103125 116.39999999999999Q348.603125 109.6 356.00312499999995 105.6Q363.403125 101.6 371.803125 101.6Q375.403125 101.6 378.50312499999995 102.19999999999999Q381.603125 102.8 384.203125 103.6L375.403125 139.0Q373.203125 137.6 369.503125 136.7Q365.803125 135.8 361.803125 135.8Q357.403125 135.8 353.603125 137.3Q349.803125 138.8 347.203125 141.6Q344.603125 144.39999999999998 343.103125 148.2Q341.603125 152.0 341.603125 156.8V210.0Z"/><path fill="#14233C" d="M439.603125 211.8Q426.203125 211.8 415.703125 204.7Q405.203125 197.6 399.003125 185.1Q392.803125 172.6 392.803125 156.8Q392.803125 140.6 399.003125 128.2Q405.203125 115.8 416.003125 108.69999999999999Q426.803125 101.6 440.603125 101.6Q448.203125 101.6 454.503125 103.8Q460.803125 106.0 465.603125 109.9Q470.403125 113.8 473.803125 118.9Q477.203125 124.0 478.803125 129.8L472.203125 129.0V103.8H504.003125V210.0H471.603125V184.4L478.803125 184.2Q477.203125 189.8 473.603125 194.8Q470.003125 199.8 464.803125 203.60000000000002Q459.603125 207.4 453.203125 209.60000000000002Q446.803125 211.8 439.603125 211.8ZM448.403125 184.8Q455.803125 184.8 461.203125 181.4Q466.603125 178.0 469.603125 171.7Q472.603125 165.4 472.603125 156.8Q472.603125 148.2 469.603125 141.89999999999998Q466.603125 135.6 461.203125 132.1Q455.803125 128.6 448.403125 128.6Q441.203125 128.6 435.903125 132.1Q430.603125 135.6 427.603125 141.89999999999998Q424.603125 148.2 424.603125 156.8Q424.603125 165.4 427.603125 171.7Q430.603125 178.0 435.903125 181.4Q441.203125 184.8 448.403125 184.8Z"/><circle cx="550.59" cy="186.00" r="19.00" fill="#C95A26"/></svg></a>
+  <nav><a class="lk" href="#comment">Comment ça marche</a><a class="lk" href="#suivis">Devis &amp; factures</a><a class="lk" href="#tarifs">Tarifs</a><a class="lk" href="#faq">Questions</a><a class="btn o s" href="#beta">Tester Nora<span class="fl"><i>→</i></span></a></nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="surtitre">Pour les artisans · devis &amp; factures</span>
+    <h1>Vous sur le terrain,<br>Nora au <em>bureau</em><i>.</i></h1>
+    <p class="l">Nora relance vos devis en attente et vos factures impayées à votre place, en votre nom, au bon moment. Vous gardez vos soirées ; vos clients signent et paient.</p>
+    <div class="ctas"><a class="btn neon" href="#beta">Réserver ma place<span class="fl"><i>→</i></span></a><a class="btn v" href="#comment">Voir comment ça marche<span class="fl"><i>→</i></span></a></div>
+    <p class="micro"><b>Gratuit pendant 1 mois</b> · sans carte bancaire · aucun logiciel à changer</p>
+  </div>
+  <div class="phone">
+    <div class="sticker" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="cercle" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs><circle cx="60" cy="60" r="59" fill="#C95A26"/><text font-family="Lexend, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="1.1" fill="#F7F4EE"><textPath href="#cercle">Conçu en Savoie, utilisé partout · </textPath></text><circle cx="60" cy="60" r="30" fill="#F7F4EE"/><g transform="translate(37 54.65) scale(0.08915) translate(-50 -96)"><path fill="#14233C" d="M54.2 210.0V103.8H84.6L85.6 125.39999999999999L79.2 127.8Q81.4 120.6 87.10000000000001 114.69999999999999Q92.80000000000001 108.8 100.80000000000001 105.19999999999999Q108.8 101.6 117.60000000000001 101.6Q129.60000000000002 101.6 137.8 106.5Q146.0 111.39999999999999 150.2 121.1Q154.4 130.8 154.4 144.8V210.0H122.2V147.4Q122.2 141.0 120.4 136.8Q118.60000000000001 132.6 114.9 130.5Q111.2 128.39999999999998 105.8 128.6Q101.6 128.6 98.0 129.89999999999998Q94.4 131.2 91.80000000000001 133.7Q89.2 136.2 87.7 139.39999999999998Q86.2 142.6 86.2 146.4V210.0H70.4Q64.8 210.0 60.8 210.0Q56.8 210.0 54.2 210.0Z"/><path fill="#14233C" d="M231.2 212.0Q214.6 212.0 201.7 204.8Q188.8 197.6 181.3 185.2Q173.8 172.8 173.8 156.8Q173.8 140.8 181.3 128.4Q188.8 116.0 201.7 108.8Q214.6 101.6 231.2 101.6Q247.8 101.6 260.70000000000005 108.8Q273.6 116.0 281.0 128.4Q288.4 140.8 288.4 156.8Q288.4 172.8 281.0 185.2Q273.6 197.6 260.70000000000005 204.8Q247.8 212.0 231.2 212.0ZM231.2 184.4Q238.4 184.4 244.0 180.8Q249.60000000000002 177.2 252.8 171.0Q256.0 164.8 255.8 156.8Q256.0 148.8 252.8 142.5Q249.60000000000002 136.2 244.0 132.6Q238.4 129.0 231.2 129.0Q224.0 129.0 218.3 132.6Q212.6 136.2 209.39999999999998 142.5Q206.2 148.8 206.4 156.8Q206.2 164.8 209.39999999999998 171.0Q212.6 177.2 218.3 180.8Q224.0 184.4 231.2 184.4Z"/><path fill="#14233C" d="M309.403125 210.0V103.8H339.803125L341.203125 138.39999999999998L335.203125 131.8Q337.603125 123.19999999999999 343.103125 116.39999999999999Q348.603125 109.6 356.00312499999995 105.6Q363.403125 101.6 371.803125 101.6Q375.403125 101.6 378.50312499999995 102.19999999999999Q381.603125 102.8 384.203125 103.6L375.403125 139.0Q373.203125 137.6 369.503125 136.7Q365.803125 135.8 361.803125 135.8Q357.403125 135.8 353.603125 137.3Q349.803125 138.8 347.203125 141.6Q344.603125 144.39999999999998 343.103125 148.2Q341.603125 152.0 341.603125 156.8V210.0Z"/><path fill="#14233C" d="M439.603125 211.8Q426.203125 211.8 415.703125 204.7Q405.203125 197.6 399.003125 185.1Q392.803125 172.6 392.803125 156.8Q392.803125 140.6 399.003125 128.2Q405.203125 115.8 416.003125 108.69999999999999Q426.803125 101.6 440.603125 101.6Q448.203125 101.6 454.503125 103.8Q460.803125 106.0 465.603125 109.9Q470.403125 113.8 473.803125 118.9Q477.203125 124.0 478.803125 129.8L472.203125 129.0V103.8H504.003125V210.0H471.603125V184.4L478.803125 184.2Q477.203125 189.8 473.603125 194.8Q470.003125 199.8 464.803125 203.60000000000002Q459.603125 207.4 453.203125 209.60000000000002Q446.803125 211.8 439.603125 211.8ZM448.403125 184.8Q455.803125 184.8 461.203125 181.4Q466.603125 178.0 469.603125 171.7Q472.603125 165.4 472.603125 156.8Q472.603125 148.2 469.603125 141.89999999999998Q466.603125 135.6 461.203125 132.1Q455.803125 128.6 448.403125 128.6Q441.203125 128.6 435.903125 132.1Q430.603125 135.6 427.603125 141.89999999999998Q424.603125 148.2 424.603125 156.8Q424.603125 165.4 427.603125 171.7Q430.603125 178.0 435.903125 181.4Q441.203125 184.8 448.403125 184.8Z"/><circle cx="550.59" cy="186.00" r="19.00" fill="#C95A26"/></g></svg></div>
+    <video src="nora-demo.mp4" poster="nora-demo-poster.jpg" autoplay muted loop playsinline aria-label="Démonstration de Nora sur un téléphone"></video>
+    <div class="badge-flot b1"><b>Devis signé</b>après la 2e relance</div>
+    <div class="badge-flot b2"><b>Avant demain</b>1 relance ferme à vérifier</div>
+    <div class="badge-flot b3"><b>Facture payée</b>relances arrêtées en un clic</div>
+  </div>
+</div></section>
+
+<div class="chiffres"><div class="wrap">
+  <div><b>0</b><span>logiciel à changer</span></div>
+  <div><b>2 <i>clics</i></b><span>valider, puis « payé » ou « signé »</span></div>
+  <div><b>J+1 → J+30</b><span>un suivi complet, du rappel à la mise en demeure</span></div>
+  <div><b>1 <i>bilan</i></b><span>chaque mois, chiffré</span></div>
+</div></div>
+
+<section class="s"><div class="wrap">
+  <p class="kicker">Le problème</p>
+  <h2>Relancer fait partie du métier. Mais personne ne s’est installé à son compte <i>pour ça</i>.</h2>
+  <div class="grid3">
+    <div class="card apparait"><h3>L’administratif mange vos soirées</h3><p>Après le chantier, il reste les devis à suivre et les factures à pointer. Nora s’en charge pendant que vous faites autre chose.</p></div>
+    <div class="card apparait"><h3>Réclamer, c’est gênant</h3><p>Alors on repousse, et l’argent attend. Nora relance avec tact, puis avec fermeté seulement si besoin, sans abîmer la relation.</p></div>
+    <div class="card apparait"><h3>Un devis oublié, un chantier perdu</h3><p>Le client hésitait, personne ne l’a recontacté, il a signé ailleurs. Nora relance chaque devis au bon moment.</p></div>
+  </div>
+</div></section>
+
+<section class="s" id="comment" style="padding-top:0"><div class="wrap">
+  <p class="kicker">Comment ça marche</p>
+  <h2>Vous continuez comme d’habitude. <i>Nora fait le reste.</i></h2>
+  <div class="steps">
+    <div class="step apparait"><h3>Vous envoyez vos documents</h3><p>Vos devis et factures partent comme aujourd’hui. Un papier ? Prenez-le en photo. Nora lit le document et lance le suivi selon le réglage choisi avec vous.</p></div>
+    <div class="step apparait"><h3>Nora relance à votre place</h3><p>Des messages courts, signés de votre nom, avec votre ton. Toujours courtois pour les devis ; plus ferme seulement si une facture reste impayée.</p></div>
+    <div class="step apparait"><h3>Vous êtes prévenu, pas dérangé</h3><p>Payé, signé, en discussion ? Un clic dans l’email arrête tout. La veille d’une relance ferme, Nora vous prévient. Et chaque mois, un bilan.</p></div>
+  </div>
+</div></section>
+
+<section class="s" style="padding-top:0"><div class="wrap nom">
+  <div class="mots apparait"><span>Votre nom<i>.</i></span><span>Votre signature<i>.</i></span><span>Votre ton<i>.</i></span></div>
+  <div class="apparait"><p class="kicker">À votre nom</p><p>Vos clients lisent un message de votre entreprise, pas d’un robot : votre logo, vos couleurs, votre signature, et le ton que vous choisissez, du plus chaleureux au plus formel. Vous pouvez même donner vos propres consignes (« je signe toujours Bonne journée, Jean »). Et rien ne part sans votre accord.</p></div>
+</div></section>
+
+<section class="s" style="padding-top:0"><div class="wrap">
+  <div class="soir apparait">
+    <div><p class="kicker">18 h 30</p><h2>Le chantier est fini. Encore de l’administratif ce soir ?</h2><p>Avec Nora, les relances sont parties pendant la journée, à votre nom. Le soir, c’est pour vous.</p></div>
+    <div class="pile"><span>DEVIS</span><span>FACTURE</span><span>DEVIS</span><span>FACTURE</span><em>RELANCE ?</em></div>
+  </div>
+</div></section>
+
+<section class="s" id="suivis" style="padding-top:0"><div class="wrap">
+  <p class="kicker">Devis &amp; factures</p>
+  <h2>Deux moments clés, <i>un seul suivi</i>.</h2>
+  <div class="duo">
+    <div class="frise apparait"><span class="tag">Avant la signature</span><h3>Relance des devis</h3><p class="pour">Plus de devis transformés en chantiers, sans passer pour un vendeur insistant.</p>
+      <div class="jal"><span class="j">J+3</span><div><b>Suivi</b><p>« Avez-vous bien reçu le devis ? Une question sur les travaux ? »</p></div></div>
+      <div class="jal"><span class="j">J+10</span><div><b>Relance</b><p>Rappel des travaux et proposition d’un échange rapide.</p></div></div>
+      <div class="jal"><span class="j">J+21</span><div><b>Dernier message</b><p>Courtois et sans insistance : la porte reste ouverte.</p></div></div>
+      <div class="jal f"><span class="j">☎</span><div><b>À vous de jouer</b><p>Nora vous suggère d’appeler, avec un script prêt à lire.</p></div></div>
+    </div>
+    <div class="frise apparait"><span class="tag">Après la facture</span><h3>Relance des factures</h3><p class="pour">Payé à temps, sans la gêne de réclamer, et dans les règles.</p>
+      <div class="jal"><span class="j">J+1</span><div><b>Rappel aimable</b><p>Comme pour un simple oubli, avec votre moyen de paiement.</p></div></div>
+      <div class="jal"><span class="j">J+7</span><div><b>Relance ferme</b><p>Demande de règlement sous 7 jours, échéancier possible.</p></div></div>
+      <div class="jal"><span class="j">J+15</span><div><b>Dernière relance</b><p>Rappel des pénalités prévues par la loi, uniquement entre professionnels.</p></div></div>
+      <div class="jal f"><span class="j">J+30</span><div><b>Mise en demeure prête</b><p>Rédigée pour vous. Vous la relisez et décidez de l’envoyer.</p></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="s" style="padding-top:0"><div class="wrap">
+  <p class="kicker">Vous gardez la main</p>
+  <h2>Automatique, <i>jamais incontrôlable</i>.</h2>
+  <div class="grid6">
+    <div class="it apparait"><b>Aucun outil à changer</b><p>Word, Excel ou logiciel de facturation : Nora s’adapte à votre façon de travailler.</p></div>
+    <div class="it apparait"><b>Rien ne démarre sans vous</b><p>Vous validez chaque document, ou Nora démarre seule quand tout est clair : c’est vous qui choisissez.</p></div>
+    <div class="it apparait"><b>Prévenu la veille</b><p>Avant chaque relance ferme, un message pour vérifier vos encaissements.</p></div>
+    <div class="it apparait"><b>Un clic pour tout arrêter</b><p>Payé, signé, contestation ou échéancier : un bouton dans chaque email.</p></div>
+    <div class="it apparait"><b>Jamais trop insistant</b><p>Au moins 5 jours entre deux relances, et aucune relance un jour férié.</p></div>
+    <div class="it apparait"><b>Nora n’encaisse rien</b><p>Vos clients vous paient directement, comme d’habitude. Nora ne négocie jamais vos prix.</p></div>
+  </div>
+</div></section>
+
+<section class="s" style="padding-top:0"><div class="wrap bilan">
+  <div><p class="kicker">Chaque mois</p><h2>Vous voyez <i>ce que Nora a fait</i> pour vous.</h2><p class="intro">Le 1er de chaque mois, un bilan simple : les devis signés et les factures réglées après relance, le temps de bureau économisé et ce qui reste en attente. Pas de tableau de bord à consulter.</p></div>
+  <div class="mail apparait">
+    <svg class="logo" role="img" aria-label="Nora" xmlns="http://www.w3.org/2000/svg" viewBox="50 96 516 120"><path fill="#14233C" d="M54.2 210.0V103.8H84.6L85.6 125.39999999999999L79.2 127.8Q81.4 120.6 87.10000000000001 114.69999999999999Q92.80000000000001 108.8 100.80000000000001 105.19999999999999Q108.8 101.6 117.60000000000001 101.6Q129.60000000000002 101.6 137.8 106.5Q146.0 111.39999999999999 150.2 121.1Q154.4 130.8 154.4 144.8V210.0H122.2V147.4Q122.2 141.0 120.4 136.8Q118.60000000000001 132.6 114.9 130.5Q111.2 128.39999999999998 105.8 128.6Q101.6 128.6 98.0 129.89999999999998Q94.4 131.2 91.80000000000001 133.7Q89.2 136.2 87.7 139.39999999999998Q86.2 142.6 86.2 146.4V210.0H70.4Q64.8 210.0 60.8 210.0Q56.8 210.0 54.2 210.0Z"/><path fill="#14233C" d="M231.2 212.0Q214.6 212.0 201.7 204.8Q188.8 197.6 181.3 185.2Q173.8 172.8 173.8 156.8Q173.8 140.8 181.3 128.4Q188.8 116.0 201.7 108.8Q214.6 101.6 231.2 101.6Q247.8 101.6 260.70000000000005 108.8Q273.6 116.0 281.0 128.4Q288.4 140.8 288.4 156.8Q288.4 172.8 281.0 185.2Q273.6 197.6 260.70000000000005 204.8Q247.8 212.0 231.2 212.0ZM231.2 184.4Q238.4 184.4 244.0 180.8Q249.60000000000002 177.2 252.8 171.0Q256.0 164.8 255.8 156.8Q256.0 148.8 252.8 142.5Q249.60000000000002 136.2 244.0 132.6Q238.4 129.0 231.2 129.0Q224.0 129.0 218.3 132.6Q212.6 136.2 209.39999999999998 142.5Q206.2 148.8 206.4 156.8Q206.2 164.8 209.39999999999998 171.0Q212.6 177.2 218.3 180.8Q224.0 184.4 231.2 184.4Z"/><path fill="#14233C" d="M309.403125 210.0V103.8H339.803125L341.203125 138.39999999999998L335.203125 131.8Q337.603125 123.19999999999999 343.103125 116.39999999999999Q348.603125 109.6 356.00312499999995 105.6Q363.403125 101.6 371.803125 101.6Q375.403125 101.6 378.50312499999995 102.19999999999999Q381.603125 102.8 384.203125 103.6L375.403125 139.0Q373.203125 137.6 369.503125 136.7Q365.803125 135.8 361.803125 135.8Q357.403125 135.8 353.603125 137.3Q349.803125 138.8 347.203125 141.6Q344.603125 144.39999999999998 343.103125 148.2Q341.603125 152.0 341.603125 156.8V210.0Z"/><path fill="#14233C" d="M439.603125 211.8Q426.203125 211.8 415.703125 204.7Q405.203125 197.6 399.003125 185.1Q392.803125 172.6 392.803125 156.8Q392.803125 140.6 399.003125 128.2Q405.203125 115.8 416.003125 108.69999999999999Q426.803125 101.6 440.603125 101.6Q448.203125 101.6 454.503125 103.8Q460.803125 106.0 465.603125 109.9Q470.403125 113.8 473.803125 118.9Q477.203125 124.0 478.803125 129.8L472.203125 129.0V103.8H504.003125V210.0H471.603125V184.4L478.803125 184.2Q477.203125 189.8 473.603125 194.8Q470.003125 199.8 464.803125 203.60000000000002Q459.603125 207.4 453.203125 209.60000000000002Q446.803125 211.8 439.603125 211.8ZM448.403125 184.8Q455.803125 184.8 461.203125 181.4Q466.603125 178.0 469.603125 171.7Q472.603125 165.4 472.603125 156.8Q472.603125 148.2 469.603125 141.89999999999998Q466.603125 135.6 461.203125 132.1Q455.803125 128.6 448.403125 128.6Q441.203125 128.6 435.903125 132.1Q430.603125 135.6 427.603125 141.89999999999998Q424.603125 148.2 424.603125 156.8Q424.603125 165.4 427.603125 171.7Q430.603125 178.0 435.903125 181.4Q441.203125 184.8 448.403125 184.8Z"/><circle cx="550.59" cy="186.00" r="19.00" fill="#C95A26"/></svg>
+    <div class="t">Votre mois de novembre</div>
+    <div class="s2">Réglés ou signés après relance</div>
+    <div class="big">8 410 €</div>
+    <div class="d"><div><b>3 450 €</b>factures réglées</div><div><b>4 960 €</b>devis signés</div></div>
+    <div class="r" style="margin-top:10px"><span>Documents relancés</span><b>21</b></div>
+    <div class="r"><span>Temps de bureau économisé</span><b>3 h 30</b></div>
+    <div class="r" style="border:0"><span>Factures encore en attente</span><b>2 · 1 830 €</b></div>
+    <p class="note">Exemple illustratif.</p>
+  </div>
+</div></section>
+
+<section class="s" id="tarifs" style="padding-top:0"><div class="wrap">
+  <p class="kicker">Tarifs</p>
+  <h2>Un prix simple, <i>sans engagement</i>.</h2>
+  <div class="switch" role="group" aria-label="Période de paiement"><button class="on" data-p="m">Mensuel</button><button data-p="a">Annuel <small>2 mois offerts</small></button></div>
+  <div class="prix">
+    <div class="offre apparait"><h3>Relance des devis</h3><div class="pp" data-m="29 €" data-a="290 €">29 € <small data-m="/ mois" data-a="/ an">/ mois</small></div><div class="eq" data-a="soit 24,17 € / mois"></div>
+      <ul><li>Suivi de chaque devis jusqu’à la signature</li><li>Script d’appel en fin de séquence</li><li>Bilan mensuel des devis</li></ul><a class="btn v bulle" data-bulle="Alors ? Prêt à gagner du temps ?" href="#beta">Je teste gratuitement<span class="fl"><i>→</i></span></a></div>
+    <div class="offre vedette apparait"><span class="rib">Recommandé</span><h3>Devis et factures</h3><div class="pp" data-m="59 €" data-a="590 €">59 € <small data-m="/ mois" data-a="/ an">/ mois</small></div><div class="eq" data-a="soit 49,17 € / mois"></div>
+      <ul><li>Les deux suivis réunis</li><li>Préavis avant chaque relance ferme</li><li>Mise en demeure prête à envoyer</li><li>Bilan mensuel complet</li></ul><a class="btn o bulle" data-bulle="Alors ? Prêt à gagner du temps ?" href="#beta">Je teste gratuitement<span class="fl"><i>→</i></span></a></div>
+    <div class="offre apparait"><h3>Relance des factures</h3><div class="pp" data-m="39 €" data-a="390 €">39 € <small data-m="/ mois" data-a="/ an">/ mois</small></div><div class="eq" data-a="soit 32,50 € / mois"></div>
+      <ul><li>Rappel, relance ferme, pénalités légales</li><li>Préavis avant chaque relance ferme</li><li>Mise en demeure prête à envoyer</li></ul><a class="btn v bulle" data-bulle="Alors ? Prêt à gagner du temps ?" href="#beta">Je teste gratuitement<span class="fl"><i>→</i></span></a></div>
+  </div>
+  <p class="cond"><b>Avec engagement de 12 mois</b> : 25 €, 33 € ou 49 € par mois, mise en route offerte. <b>Mise en route</b> : offerte pendant la bêta, en annuel et avec engagement. En mensuel, 99 € à distance, avec l’import de vos impayés et devis en cours et un bilan chiffré dès le premier jour, remboursés si vous arrêtez dans les 30 jours. TVA non applicable, art. 293 B du CGI.</p>
+</div></section>
+
+<section class="s aime" style="padding-top:0"><div class="wrap" style="max-width:900px">
+  <p class="kicker">Notre façon de voir</p>
+  <h2 class="apparait">Sérieux sur vos factures. Beaucoup moins sur <i>le reste</i>.</h2>
+  <div class="lst apparait">
+    <div class="rg oui"><b>Nora aime</b><span>les devis qui se transforment en chantiers</span></div>
+    <div class="rg non"><b>Moins</b><span>relancer un client à 22 h, après la journée</span></div>
+    <div class="rg oui"><b>Nora aime</b><span>les clients qui paient à l’heure</span></div>
+    <div class="rg non"><b>Moins</b><span>les « je vous rappelle » qui ne rappellent jamais</span></div>
+    <div class="rg oui"><b>Nora aime</b><span>les soirées passées ailleurs que sur un tableur</span></div>
+    <div class="rg non"><b>Moins</b><span>les logiciels qu’il faut trois jours pour comprendre</span></div>
+  </div>
+  <p class="fin apparait">On peut être carré sur les relances sans avoir l’air de sortir d’un service contentieux.</p>
+</div></section>
+
+<section class="s" id="beta" style="padding-top:0"><div class="wrap">
+  <div class="beta apparait">
+    <div><h2>La bêta gratuite est ouverte. <i>Les places sont limitées.</i></h2><p>Nous installons chaque compte avec vous. En échange, vos retours nous aident à construire l’outil dont les artisans ont vraiment besoin. Les bêta-testeurs conservent leur tarif de lancement.</p></div>
+    <div class="box">
+      <p><b style="color:var(--bleu);font-size:18px">Inscription en 1 minute</b></p>
+      <ul><li>1 mois gratuit, sans carte bancaire</li><li>Mise en route offerte, avec le bilan de vos impayés</li><li>Devis, factures ou les deux</li></ul>
+      <a class="btn neon" href="https://airtable.com/appdvWvInoFEb0hFc/pag7kkEvdOcc1fINe/form" target="_blank" rel="noopener">Réserver ma place<span class="fl"><i>→</i></span></a>
+      <p class="mini">Ou écrivez-nous : <a href="mailto:contact@agencenora.fr">contact@agencenora.fr</a></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="s" id="faq" style="padding-top:0"><div class="wrap" style="max-width:860px">
+  <p class="kicker">Questions fréquentes</p>
+  <h2>Les réponses <i>avant de vous lancer</i>.</h2>
+  <details><summary>Dois-je changer de logiciel de facturation ?</summary><p>Non. Vous continuez à faire vos devis et factures comme aujourd’hui, avec n’importe quel outil, même Word ou Excel. Nora s’occupe uniquement du suivi.</p></details>
+  <details><summary>Mes clients sauront-ils que c’est automatisé ?</summary><p>Les messages sont rédigés par une IA puis envoyés à votre nom, avec votre signature et votre ton. Ils restent courts et polis. Une petite mention « Relance envoyée avec Nora » figure en bas des premiers rappels ; elle disparaît avec l’option marque blanche.</p></details>
+  <details><summary>Qu’est-ce qui me reste à faire ?</summary><p>Deux gestes : valider vos documents (ou laisser Nora démarrer seule quand tout est clair), puis cliquer sur « payée » ou « signé » quand un client règle ou accepte. La veille de chaque relance ferme, Nora vous prévient pour vérifier.</p></details>
+  <details><summary>Et si un client conteste ou demande un délai ?</summary><p>Il répond simplement à la relance. Nora lit sa réponse, met le suivi en pause et vous la transmet aussitôt, avec un résumé : vous lui répondez directement. S’il promet de payer à une date, les relances reprennent seules si rien n’arrive. Nora ne négocie jamais à votre place.</p></details><details><summary>Les relances seront-elles à mon image ?</summary><p>Oui. Chaque relance porte votre logo (ou vos initiales), votre couleur et votre signature complète. Vous choisissez le ton parmi cinq (chaleureux, cordial, formel, direct ou familier, le tutoiement étant réservé aux particuliers), et vous pouvez ajouter vos propres consignes. Si vous avez un lien de paiement, un bouton « Payer en ligne » apparaît dans la relance.</p></details><details><summary>Où suivre mes devis et factures ?</summary><p>Dans votre espace Nora, une page personnelle à garder en favori sur votre téléphone : tout ce qui est en cours, la date de la prochaine relance, ce qui attend votre validation et ce qui a été réglé ou signé.</p></details><details><summary>Que deviennent mes données et celles de mes clients ?</summary><p>Elles servent uniquement au suivi de vos devis et factures. Nora agit comme sous-traitant, selon un <a href="sous-traitance.html">accord de sous-traitance des données</a> conforme au RGPD, et ne vend aucune donnée.</p></details>
+  <details><summary>Est-ce que Nora encaisse l’argent ?</summary><p>Jamais. Vos clients vous paient directement, par votre lien de paiement, virement ou chèque, comme d’habitude.</p></details>
+  <details><summary>Combien ça coûte ?</summary><p>La bêta est gratuite, mise en route comprise. Ensuite : 29 € par mois pour les devis, 39 € pour les factures, 59 € pour les deux, sans engagement, ou en annuel avec 2 mois offerts. TVA non applicable, art. 293 B du CGI.</p></details>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><svg class="logo" role="img" aria-label="Nora" xmlns="http://www.w3.org/2000/svg" viewBox="50 96 516 120"><path fill="#F7F4EE" d="M54.2 210.0V103.8H84.6L85.6 125.39999999999999L79.2 127.8Q81.4 120.6 87.10000000000001 114.69999999999999Q92.80000000000001 108.8 100.80000000000001 105.19999999999999Q108.8 101.6 117.60000000000001 101.6Q129.60000000000002 101.6 137.8 106.5Q146.0 111.39999999999999 150.2 121.1Q154.4 130.8 154.4 144.8V210.0H122.2V147.4Q122.2 141.0 120.4 136.8Q118.60000000000001 132.6 114.9 130.5Q111.2 128.39999999999998 105.8 128.6Q101.6 128.6 98.0 129.89999999999998Q94.4 131.2 91.80000000000001 133.7Q89.2 136.2 87.7 139.39999999999998Q86.2 142.6 86.2 146.4V210.0H70.4Q64.8 210.0 60.8 210.0Q56.8 210.0 54.2 210.0Z"/><path fill="#F7F4EE" d="M231.2 212.0Q214.6 212.0 201.7 204.8Q188.8 197.6 181.3 185.2Q173.8 172.8 173.8 156.8Q173.8 140.8 181.3 128.4Q188.8 116.0 201.7 108.8Q214.6 101.6 231.2 101.6Q247.8 101.6 260.70000000000005 108.8Q273.6 116.0 281.0 128.4Q288.4 140.8 288.4 156.8Q288.4 172.8 281.0 185.2Q273.6 197.6 260.70000000000005 204.8Q247.8 212.0 231.2 212.0ZM231.2 184.4Q238.4 184.4 244.0 180.8Q249.60000000000002 177.2 252.8 171.0Q256.0 164.8 255.8 156.8Q256.0 148.8 252.8 142.5Q249.60000000000002 136.2 244.0 132.6Q238.4 129.0 231.2 129.0Q224.0 129.0 218.3 132.6Q212.6 136.2 209.39999999999998 142.5Q206.2 148.8 206.4 156.8Q206.2 164.8 209.39999999999998 171.0Q212.6 177.2 218.3 180.8Q224.0 184.4 231.2 184.4Z"/><path fill="#F7F4EE" d="M309.403125 210.0V103.8H339.803125L341.203125 138.39999999999998L335.203125 131.8Q337.603125 123.19999999999999 343.103125 116.39999999999999Q348.603125 109.6 356.00312499999995 105.6Q363.403125 101.6 371.803125 101.6Q375.403125 101.6 378.50312499999995 102.19999999999999Q381.603125 102.8 384.203125 103.6L375.403125 139.0Q373.203125 137.6 369.503125 136.7Q365.803125 135.8 361.803125 135.8Q357.403125 135.8 353.603125 137.3Q349.803125 138.8 347.203125 141.6Q344.603125 144.39999999999998 343.103125 148.2Q341.603125 152.0 341.603125 156.8V210.0Z"/><path fill="#F7F4EE" d="M439.603125 211.8Q426.203125 211.8 415.703125 204.7Q405.203125 197.6 399.003125 185.1Q392.803125 172.6 392.803125 156.8Q392.803125 140.6 399.003125 128.2Q405.203125 115.8 416.003125 108.69999999999999Q426.803125 101.6 440.603125 101.6Q448.203125 101.6 454.503125 103.8Q460.803125 106.0 465.603125 109.9Q470.403125 113.8 473.803125 118.9Q477.203125 124.0 478.803125 129.8L472.203125 129.0V103.8H504.003125V210.0H471.603125V184.4L478.803125 184.2Q477.203125 189.8 473.603125 194.8Q470.003125 199.8 464.803125 203.60000000000002Q459.603125 207.4 453.203125 209.60000000000002Q446.803125 211.8 439.603125 211.8ZM448.403125 184.8Q455.803125 184.8 461.203125 181.4Q466.603125 178.0 469.603125 171.7Q472.603125 165.4 472.603125 156.8Q472.603125 148.2 469.603125 141.89999999999998Q466.603125 135.6 461.203125 132.1Q455.803125 128.6 448.403125 128.6Q441.203125 128.6 435.903125 132.1Q430.603125 135.6 427.603125 141.89999999999998Q424.603125 148.2 424.603125 156.8Q424.603125 165.4 427.603125 171.7Q430.603125 178.0 435.903125 181.4Q441.203125 184.8 448.403125 184.8Z"/><circle cx="550.59" cy="186.00" r="19.00" fill="#C95A26"/></svg><p class="sig">Vous sur le terrain, Nora au bureau.</p><span class="ville">Basés en Savoie. Aux côtés des artisans partout en France.</span></div>
+  <div style="text-align:right;font-size:14px;line-height:1.9"><a href="mailto:contact@agencenora.fr">contact@agencenora.fr</a><br><a href="mentions-legales.html">Mentions légales</a> · <a href="cgv.html">CGV</a> · <a href="sous-traitance.html">Sous-traitance des données</a> · <a href="confidentialite.html">Confidentialité</a><br>© 2026 Agence Nora</div>
+</div></footer>
+
+<script>
+// Tarifs mensuel / annuel
+document.querySelectorAll('.switch button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.switch button').forEach(x => x.classList.toggle('on', x === b));
+  const p = b.dataset.p;
+  document.querySelectorAll('.pp').forEach(el => { const s = el.querySelector('small'); el.firstChild.textContent = el.dataset[p] + ' '; s.textContent = s.dataset[p]; });
+  document.querySelectorAll('.eq').forEach(el => el.textContent = p === 'a' ? el.dataset.a : '');
+}));
+// Apparition au défilement
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } }), { threshold: .15 }) : null;
+document.querySelectorAll('.apparait').forEach(el => io ? io.observe(el) : el.classList.add('vu'));
+
+// Néon : sur téléphone (pas de survol), il s'allume quand il apparaît à l'écran
+if (window.matchMedia('(hover: none)').matches && 'IntersectionObserver' in window) {
+  const n = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('on'), 400); n.unobserve(e.target); } }), { threshold: .6 });
+  document.querySelectorAll('.btn.neon').forEach(b => n.observe(b));
+}
+
+// Bulle d'encouragement : sur téléphone, elle s'affiche quelques secondes à l'apparition du bouton
+if (window.matchMedia('(hover: none)').matches && 'IntersectionObserver' in window) {
+  const bo = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { const b = e.target; setTimeout(() => b.classList.add('on'), 500); setTimeout(() => b.classList.remove('on'), 3500); bo.unobserve(b); } }), { threshold: .9 });
+  document.querySelectorAll('.btn.bulle').forEach(b => bo.observe(b));
+}
+
+// Frises : la ligne orange avance avec le défilement et allume chaque étape au passage
+(function () {
+  const etapes = [...document.querySelectorAll('.jal')];
+  if (!etapes.length) return;
+  const reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function maj() {
+    const repere = window.innerHeight * 0.62;
+    etapes.forEach(e => {
+      const r = e.getBoundingClientRect();
+      const centre = r.top + 26;
+      e.classList.toggle('on', reduit || centre < repere);
+      if (e.nextElementSibling && e.nextElementSibling.classList.contains('jal')) {
+        const suivant = e.nextElementSibling.getBoundingClientRect().top + 26;
+        const p = reduit ? 1 : Math.max(0, Math.min(1, (repere - centre) / (suivant - centre)));
+        e.style.setProperty('--f', (p * 100).toFixed(1) + '%');
+      }
+    });
+  }
+  window.addEventListener('scroll', maj, { passive: true });
+  window.addEventListener('resize', maj);
+  maj();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d187cfff4d0f485cb300d0bd46c33404"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
