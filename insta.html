@@ -161,6 +161,23 @@ h2 i{font-style:normal;color:var(--orange)}
 .ins-go{width:100%;border:0;cursor:pointer;font-family:Lexend,Arial,sans-serif}.ins-go:disabled{opacity:.6}.ins-msg{font-size:14px;margin-top:10px;text-align:center}.ins-msg.err{color:#B42318}
 .ins-ok{text-align:center;padding:10px 0}.ins-ok .r{width:64px;height:64px;border-radius:50%;background:#FFF1E9;color:var(--orange);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:30px;font-weight:700}.ins-ok b{display:block;font:700 20px Lexend,Arial,sans-serif;color:var(--bleu);margin-bottom:6px}.ins-ok p{font-size:15px!important}
 @media(max-width:520px){.ins-g{grid-template-columns:1fr}.ins-g .ins-l{grid-column:auto}}
+
+/* chiffres, logiciels, comparatif */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.st{background:var(--bleu);color:var(--creme);border-radius:20px;padding:24px}.st b{display:block;font:700 44px Lexend,Arial,sans-serif;color:var(--orange);letter-spacing:-1px;line-height:1}
+.st span{display:block;font-size:16px;margin-top:10px;line-height:1.4}.st small{display:block;font-size:12.5px;color:#9AA3B5;margin-top:10px}
+.logiciels{margin-top:36px;background:#fff;border:1px solid var(--ligne);border-left:5px solid var(--orange);border-radius:18px;padding:20px 24px;display:flex;flex-direction:column;gap:6px}
+.logiciels b{font:700 18px Lexend,Arial,sans-serif}.logiciels span{font-size:16px;color:var(--graphite)}.logiciels em{font-style:normal;font-size:14.5px;color:var(--orange);font-weight:600}
+.cmp-tab{margin-top:30px;overflow-x:auto;border-radius:20px;border:1px solid var(--ligne);background:#fff}
+.cmp{width:100%;border-collapse:collapse;min-width:720px;font-size:15px}
+.cmp th,.cmp td{padding:15px 18px;text-align:left;border-bottom:1px solid #EFEAE0;vertical-align:top}
+.cmp thead th{font:700 15px Lexend,Arial,sans-serif;color:var(--bleu);background:#FBF9F5}
+.cmp tbody th{font-weight:600;color:var(--bleu);width:24%}.cmp td{color:var(--graphite)}
+.cmp .nora{background:#FFF6F1;color:var(--bleu);font-weight:600}.cmp thead .nora{background:var(--orange);color:#fff}
+.cmp-logo{font:700 17px Lexend,Arial,sans-serif}.cmp-logo i{font-style:normal;color:var(--bleu)}
+.cmp .ok{color:var(--orange);font-weight:700;margin-right:4px}.cmp .no{color:#B9B3A7}
+.cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
+@media(max-width:860px){.stats{grid-template-columns:1fr}.st b{font-size:38px}}
 /* faq */
 .faq-btn{margin-top:22px;display:inline-flex;align-items:center;gap:12px;font:700 17px Lexend,Arial,sans-serif;color:var(--bleu);background:#fff;border:2px solid var(--bleu);border-radius:14px;padding:13px 20px;cursor:pointer;transition:background .15s,color .15s}.faq-btn:hover{background:var(--bleu);color:#fff}.faq-btn i{font-style:normal;color:var(--orange);font-size:20px;line-height:1;transition:transform .2s}.faq-btn[aria-expanded="true"] i{transform:rotate(180deg)}.faq-liste{margin-top:6px;animation:essIn .4s forwards}
 details{background:#fff;border:1px solid var(--ligne);border-radius:16px;padding:20px 24px;margin-top:12px}
@@ -404,6 +421,12 @@ footer .ville{display:block;margin-top:6px;font-size:14px;color:#C9CEDA}
     <div class="card apparait"><h3>Réclamer, c’est gênant</h3><p>Alors on repousse, et l’argent attend. Nora relance avec tact, puis avec fermeté seulement si besoin, sans abîmer la relation.</p></div>
     <div class="card apparait"><h3>Un devis oublié, un chantier perdu</h3><p>Le client hésitait, personne ne l’a recontacté, il a signé ailleurs. Nora relance chaque devis au bon moment.</p></div>
   </div>
+
+  <div class="stats apparait">
+    <div class="st"><b>1 sur 2</b><span>entreprises paient encore leurs factures en retard</span><small>Altares, 2026</small></div>
+    <div class="st"><b>86 %</b><span>des entreprises ont subi des retards de paiement en 2025</span><small>Coface, 2025</small></div>
+    <div class="st"><b>10 h</b><span>par semaine de gestion pour un chef d’entreprise artisanale</span><small>Asterès pour le FAFCEA, 2024</small></div>
+  </div>
 </div></section>
 
 <section class="s" id="essai" style="padding-top:0">
@@ -445,6 +468,8 @@ footer .ville{display:block;margin-top:6px;font-size:14px;color:#C9CEDA}
     <div class="step apparait"><h3>Nora relance à votre place</h3><p>Des messages courts, signés de votre nom, avec votre ton. Toujours courtois pour les devis ; plus ferme seulement si une facture reste impayée.</p></div>
     <div class="step apparait"><h3>Vous êtes prévenu, pas dérangé</h3><p>Payé, signé, en discussion ? Un clic dans l’email arrête tout. La veille d’une relance ferme, Nora vous prévient. Et chaque mois, un bilan.</p></div>
   </div>
+
+  <div class="logiciels apparait"><b>Fonctionne avec votre logiciel actuel</b><span>Obat · Batappli · Tolteck · Henrri · EBP · Sage · Pennylane · Excel · Word… et même le papier, en photo.</span><em>Rien à installer, rien à changer : il suffit d’une copie cachée.</em></div>
 </div></section>
 
 <section class="s" style="padding-top:0"><div class="wrap nom">
@@ -477,6 +502,14 @@ footer .ville{display:block;margin-top:6px;font-size:14px;color:#C9CEDA}
     </div>
   </div>
 </div></section>
+
+<section class="s" id="comparatif" style="padding-top:0"><div class="wrap">
+  <p class="kicker">Comparer</p>
+  <h2>Votre logiciel fait les factures. <i>Nora les fait payer.</i></h2>
+  <p class="intro">Gardez votre logiciel : Nora prend le relais là où il s’arrête.</p>
+  <div class="cmp-tab apparait"><table class="cmp"><thead><tr><th></th><th>Faire soi-même</th><th>Logiciel de facturation</th><th class="nora">Avec <span class="cmp-logo">nora<i>.</i></span></th></tr></thead><tbody><tr><th>Relance de vos devis</th><td>Quand vous y pensez</td><td>Vous voyez s’il est ouvert, vous relancez vous-même</td><td class="nora"><span class="ok">✓</span> À J+3, J+10 et J+21, en votre nom</td></tr><tr><th>Relances après l’échéance</th><td>À la main, quand vous osez</td><td>Un rappel, rarement plus</td><td class="nora"><span class="ok">✓</span> Jusqu’à la mise en demeure prête</td></tr><tr><th>Lecture des réponses de vos clients</th><td><span class="no">—</span></td><td><span class="no">—</span></td><td class="nora"><span class="ok">✓</span> Pause et transmission immédiate</td></tr><tr><th>Le bon moment pour appeler</th><td><span class="no">—</span></td><td>Selon les logiciels</td><td class="nora"><span class="ok">✓</span> Alerte dès qu’un client hésite</td></tr><tr><th>Signature du devis en ligne et acompte</th><td><span class="no">—</span></td><td>Selon les logiciels</td><td class="nora"><span class="ok">✓</span> En un clic, preuve horodatée</td></tr><tr><th>Paiement facilité</th><td>IBAN à recopier</td><td>Lien de paiement parfois</td><td class="nora"><span class="ok">✓</span> Lien ou IBAN à copier, virement signalé</td></tr><tr><th>Changer vos outils</th><td>Non</td><td>Oui</td><td class="nora"><span class="ok">✓</span> Non, fonctionne avec tous</td></tr><tr><th>Votre temps</th><td>Plusieurs heures par mois</td><td>Moins, mais vous relancez</td><td class="nora"><b>Deux clics</b></td></tr></tbody></table></div>
+</div></section>
+
 
 <section class="s" style="padding-top:0"><div class="wrap">
   <p class="kicker">Vous gardez la main</p>
