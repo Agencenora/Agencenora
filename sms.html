@@ -178,6 +178,8 @@ h2 i{font-style:normal;color:var(--orange)}
 .cmp .ok{color:var(--orange);font-weight:700;margin-right:4px}.cmp .no{color:#B9B3A7}
 .cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
 @media(max-width:860px){.stats{grid-template-columns:1fr}.st b{font-size:38px}}
+.rdv{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;padding:11px;border:2px solid var(--bleu);border-radius:12px;color:var(--bleu);font:600 14.5px "DM Sans",Arial,sans-serif;text-decoration:none;transition:background .15s,color .15s}.rdv:hover{background:var(--bleu);color:#fff}.rdv svg{color:var(--orange)}.rdv:hover svg{color:#fff}
+.cmp-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 /* faq */
 .faq-btn{margin-top:22px;display:inline-flex;align-items:center;gap:12px;font:700 17px Lexend,Arial,sans-serif;color:var(--bleu);background:#fff;border:2px solid var(--bleu);border-radius:14px;padding:13px 20px;cursor:pointer;transition:background .15s,color .15s}.faq-btn:hover{background:var(--bleu);color:#fff}.faq-btn i{font-style:normal;color:var(--orange);font-size:20px;line-height:1;transition:transform .2s}.faq-btn[aria-expanded="true"] i{transform:rotate(180deg)}.faq-liste{margin-top:6px;animation:essIn .4s forwards}
 details{background:#fff;border:1px solid var(--ligne);border-radius:16px;padding:20px 24px;margin-top:12px}
@@ -508,6 +510,8 @@ footer .ville{display:block;margin-top:6px;font-size:14px;color:#C9CEDA}
   <h2>Votre logiciel fait les factures. <i>Nora les fait payer.</i></h2>
   <p class="intro">Gardez votre logiciel : Nora prend le relais là où il s’arrête.</p>
   <div class="cmp-tab apparait"><table class="cmp"><thead><tr><th></th><th>Faire soi-même</th><th>Logiciel de facturation</th><th class="nora">Avec <span class="cmp-logo">nora<i>.</i></span></th></tr></thead><tbody><tr><th>Relance de vos devis</th><td>Quand vous y pensez</td><td>Vous voyez s’il est ouvert, vous relancez vous-même</td><td class="nora"><span class="ok">✓</span> À J+3, J+10 et J+21, en votre nom</td></tr><tr><th>Relances après l’échéance</th><td>À la main, quand vous osez</td><td>Un rappel, rarement plus</td><td class="nora"><span class="ok">✓</span> Jusqu’à la mise en demeure prête</td></tr><tr><th>Lecture des réponses de vos clients</th><td><span class="no">—</span></td><td><span class="no">—</span></td><td class="nora"><span class="ok">✓</span> Pause et transmission immédiate</td></tr><tr><th>Le bon moment pour appeler</th><td><span class="no">—</span></td><td>Selon les logiciels</td><td class="nora"><span class="ok">✓</span> Alerte dès qu’un client hésite</td></tr><tr><th>Signature du devis en ligne et acompte</th><td><span class="no">—</span></td><td>Selon les logiciels</td><td class="nora"><span class="ok">✓</span> En un clic, preuve horodatée</td></tr><tr><th>Paiement facilité</th><td>IBAN à recopier</td><td>Lien de paiement parfois</td><td class="nora"><span class="ok">✓</span> Lien ou IBAN à copier, virement signalé</td></tr><tr><th>Changer vos outils</th><td>Non</td><td>Oui</td><td class="nora"><span class="ok">✓</span> Non, fonctionne avec tous</td></tr><tr><th>Votre temps</th><td>Plusieurs heures par mois</td><td>Moins, mais vous relancez</td><td class="nora"><b>Deux clics</b></td></tr></tbody></table></div>
+
+  <div class="cmp-cta apparait"><a class="btn o" href="#beta">Réserver ma place gratuite<span class="fl"><i>→</i></span></a><a class="btn v" href="https://calendar.app.google/AQhv7RUdwTcf7u7H6" target="_blank" rel="noopener">Réserver un appel de 10 min<span class="fl"><i>→</i></span></a></div>
 </div></section>
 
 
@@ -590,6 +594,7 @@ footer .ville{display:block;margin-top:6px;font-size:14px;color:#C9CEDA}
         <button class="btn o ins-go" type="submit">Réserver ma place gratuite<span class="fl"><i>→</i></span></button>
         <div class="ins-msg" id="ins-msg" role="status"></div>
       </form>
+      <a class="rdv" href="https://calendar.app.google/AQhv7RUdwTcf7u7H6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>Vous préférez en parler ? Réserver un appel de 10 min</a>
       <p class="mini">Ou écrivez-nous : <a href="mailto:contact@agencenora.fr">contact@agencenora.fr</a></p>
     </div>
   </div>
@@ -710,7 +715,7 @@ if (window.matchMedia('(hover: none)').matches && 'IntersectionObserver' in wind
     var onglets=exemple?'<div class="ess-onglets"><button type="button" class="ess-o on" data-t="devis">Côté devis</button><button type="button" class="ess-o" data-t="facture">Côté facture</button></div>':'';
     var type=exemple?'devis':d.type;
     function rendu(t){return t==='devis'?parcoursDevis(d):parcoursFacture(d)}
-    res.innerHTML=onglets+'<div class="ess-tl" id="ess-tl">'+rendu(type)+'</div><div class="ess-fin"><div><b>Votre temps passé : deux clics.</b><span>Tout le reste, Nora s’en occupe, en votre nom.</span></div><div><a class="btn o" href="'+URL_BETA+'">Je réserve ma place gratuite<span class="fl"><i>→</i></span></a><a class="lien" href="#tarifs">Voir les tarifs</a></div></div>';
+    res.innerHTML=onglets+'<div class="ess-tl" id="ess-tl">'+rendu(type)+'</div><div class="ess-fin"><div><b>Votre temps passé : deux clics.</b><span>Tout le reste, Nora s’en occupe, en votre nom.</span></div><div><a class="btn o" href="'+URL_BETA+'">Je réserve ma place gratuite<span class="fl"><i>→</i></span></a><a class="lien" href="https://calendar.app.google/AQhv7RUdwTcf7u7H6" target="_blank" rel="noopener">Réserver un appel</a><a class="lien" href="#tarifs">Voir les tarifs</a></div></div>';
     res.querySelectorAll('.ess-o').forEach(function(b){b.addEventListener('click',function(){res.querySelectorAll('.ess-o').forEach(function(x){x.classList.remove('on')});b.classList.add('on');$('#ess-tl').innerHTML=rendu(b.getAttribute('data-t'))})});
     setTimeout(function(){res.scrollIntoView({behavior:'smooth',block:'start'})},60);
   }
